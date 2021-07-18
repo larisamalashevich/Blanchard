@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Blanchard</title>
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header class="header">
+        <div class="page-container header_container-top">
+          <button
+            id="burger"
+            class="btn_burger burger"
+            aria-label="открыть меню"
+          >
+            <svg
+              width="36"
+              height="29"
+              viewbox="0 0 36 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                width="36"
+                height="3.65217"
+                transform="matrix(-1 0 0 1 36 0.700012)"
+                fill="white"
+              />
+              <path
+                d="M28.2002 12.8739H0.00019455V16.5261H28.2002V12.8739Z"
+                fill="white"
+              />
+              <path d="M24 25.0479H0V28.7H24V25.0479Z" fill="white" />
+            </svg>
+          </button>
+
+          <a href="" class="header-logo">
+            <img
+              src="./img/Лого.svg"
+              alt="Логотип-Blachard-картинная галерея"
+              class="logo-img"
+            />
+          </a>
+
+          <nav class="header_center nav">
+            <ul id="menu" class="nav_list menu">
+              <li class="close-menu-btn">
+                <button class="btn-close" aria-label="закрыть меню">
+                  <svg
+                    class="X"
+                    width="29"
+                    height="29"
+                    viewbox="0 0 29 29"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="2.09082"
+                      width="29.5699"
+                      height="2.95699"
+                      transform="rotate(45 2.09082 0)"
+                      class="XlineX"
+                    />
+                    <rect
+                      y="20.9092"
+                      width="29.5699"
+                      height="2.95699"
+                      transform="rotate(-45 0 20.9092)"
+                      class="XlineX"
+                    />
+                  </svg>
+                </button>
+              </li>
+              <li class="nav_item">
+                <a href="#about" class="nav_link">О&nbsp;нас </a>
+              </li>
+              <li class="nav_item">
+                <a href="" class="nav_link">Галерея </a>
+              </li>
+
+              <li class="nav_item">
+                <a href="" class="nav_link">Каталог </a>
+              </li>
+
+              <li class="nav_item">
+                <a href="" class="nav_link">События </a>
+              </li>
+              <li class="nav_item">
+                <a href="" class="nav_link">Издания </a>
+              </li>
+              <li class="nav_item">
+                <a href="" class="nav_link">Проекты </a>
+              </li>
+              <li class="nav_item">
+                <a href="" class="nav_link">Контакты </a>
+              </li>
+              <li class="nav_item">
+                <a
+                  href=""
+                  class="nav_link header_container-top--return return-icon"
+                  aria-label="Войти"
+                >
+                  <svg
+                    class="return-icon-svg"
+                    width="13"
+                    height="13"
+                    viewbox="0 0 13 13"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z"
+                    />
+                  </svg>
+                  Войти
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <button
+            id="search"
+            type="submit"
+            name="searchid"
+            class="btn_find-reset btn_find btn_find-breakpoint"
+            aria-label="поиск по сайту"
+          >
+            <svg
+              width="29"
+              height="28"
+              viewbox="0 0 23 22"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                width="6.8678"
+                height="1.71695"
+                transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
+              />
+            </svg>
+          </button>
+          <div id="menu-search" class="menu-search">
+            <form
+              action="/search/"
+              target="_blank"
+              class="header_container-top--form-search"
+            >
+              <button
+                type="submit"
+                name="searchid"
+                class="btn_find-reset btn_find"
+                aria-label="поиск по сайту"
+              >
+                <svg
+                  width="23"
+                  height="22"
+                  viewbox="0 0 23 22"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="6.8678"
+                    height="1.71695"
+                    transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
+                  />
+                </svg>
+              </button>
+              <label class="search-input-label"
+                ><input
+                  type="search"
+                  name="text"
+                  placeholder="Поиск по сайту"
+                  class="search-input"
+                  autocomplete="off"
+                />
+              </label>
+            </form>
+            <div class="close-menu-search-btn">
+              <button class="btn-close" aria-label="закрыть поиск по сайту">
+                <svg
+                  class="X"
+                  width="29"
+                  height="29"
+                  viewbox="0 0 29 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    x="2.09082"
+                    width="29.5699"
+                    height="2.95699"
+                    transform="rotate(45 2.09082 0)"
+                    class="XlineX"
+                  />
+                  <rect
+                    y="20.9092"
+                    width="29.5699"
+                    height="2.95699"
+                    transform="rotate(-45 0 20.9092)"
+                    class="XlineX"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-container header_container-bottom">
+          <ul id="direction" class="nav_list">
+            <li class="nav_item-direction">
+              <div class="dropdown">
+                <a
+                  class="dropdown-toggle nav_link nav_link-direction"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Реализм
+                </a>
+                <div class="dropdown-menu">
+                  <div class="dropdown-menu-content">
+                    <div
+                      class="dropdown-nav_list"
+                      data-simplebar-auto-hide="false"
+                      data-simplebar
+                    >
+                      <ul aria-labelledby="dropdownMenuLink1">
+                        <li class="dropdown-item dropdown1-element1">
+                          <a class="dropdown-link" href="#">Тинторетто</a>
+                        </li>
+                        <li class="dropdown-item dropdown1-element2">
+                          <a class="dropdown-link" href="#">Фридрих</a>
+                        </li>
+                        <li class="dropdown-item dropdown1-element3">
+                          <a class="dropdown-link" href="#">Леонардо</a>
+                        </li>
+                        <li class="dropdown-item dropdown1-element4">
+                          <a class="dropdown-link" href="#">Верроккьо</a>
+                        </li>
+                        <li class="dropdown-item dropdown1-element5">
+                          <a class="dropdown-link" href="#">Художник15</a>
+                        </li>
+                        <li class="dropdown-item dropdown1-element5">
+                          <a class="dropdown-link" href="#">Художник16</a>
+                        </li>
+                        <li class="dropdown-item dropdown1-element5">
+                          <a class="dropdown-link" href="#">Художник17</a>
+                        </li>
+                        <li class="dropdown-item dropdown1-element5">
+                          <a class="dropdown-link" href="#">Художник18</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav_item-direction">
+              <div class="dropdown">
+                <a
+                  class="dropdown-toggle nav_link nav_link-direction"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Импрессионизм
+                </a>
+                <div class="dropdown-menu">
+                  <div class="dropdown-menu-content">
+                    <div
+                      class="dropdown-nav_list"
+                      data-simplebar-auto-hide="false"
+                      data-simplebar
+                    >
+                      <ul aria-labelledby="dropdownMenuLink2">
+                        <li class="dropdown-item dropdown2-element1">
+                          <a class="dropdown-link" href="#">Мане</a>
+                        </li>
+                        <li class="dropdown-item dropdown2-element2">
+                          <a class="dropdown-link" href="#">Сислей</a>
+                        </li>
+                        <li class="dropdown-item dropdown2-element3">
+                          <a class="dropdown-link" href="#">Моне</a>
+                        </li>
+                        <li class="dropdown-item dropdown2-element4">
+                          <a class="dropdown-link" href="#">Ренуар</a>
+                        </li>
+                        <li class="dropdown-item dropdown2-element5">
+                          <a class="dropdown-link" href="#">Художник15</a>
+                        </li>
+                        <li class="dropdown-item dropdown2-element5">
+                          <a class="dropdown-link" href="#">Художник16</a>
+                        </li>
+                        <li class="dropdown-item dropdown2-element5">
+                          <a class="dropdown-link" href="#">Художник17</a>
+                        </li>
+                        <li class="dropdown-item dropdown2-element5">
+                          <a class="dropdown-link" href="#">Художник18</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav_item-direction">
+              <div class="dropdown">
+                <a
+                  class="dropdown-toggle nav_link nav_link-direction"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink3"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Постимпрессионизм
+                </a>
+                <div class="dropdown-menu">
+                  <div class="dropdown-menu-content">
+                    <div
+                      class="dropdown-nav_list"
+                      data-simplebar-auto-hide="false"
+                      data-simplebar
+                    >
+                      <ul aria-labelledby="dropdownMenuLink3">
+                        <li class="dropdown-item dropdown3-element1">
+                          <a class="dropdown-link" href="#">Ван Гог</a>
+                        </li>
+                        <li class="dropdown-item dropdown3-element2">
+                          <a class="dropdown-link" href="#">Сезанн</a>
+                        </li>
+                        <li class="dropdown-item dropdown3-element3">
+                          <a class="dropdown-link" href="#">Гоген</a>
+                        </li>
+                        <li class="dropdown-item dropdown3-element4">
+                          <a class="dropdown-link" href="#">Сёра</a>
+                        </li>
+                        <li class="dropdown-item dropdown3-element5">
+                          <a class="dropdown-link" href="#">Художник15</a>
+                        </li>
+                        <li class="dropdown-item dropdown3-element5">
+                          <a class="dropdown-link" href="#">Художник16</a>
+                        </li>
+                        <li class="dropdown-item dropdown3-element5">
+                          <a class="dropdown-link" href="#">Художник17</a>
+                        </li>
+                        <li class="dropdown-item dropdown3-element5">
+                          <a class="dropdown-link" href="#">Художник18</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav_item-direction">
+              <div class="dropdown">
+                <a
+                  class="dropdown-toggle nav_link nav_link-direction"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink4"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Авангард
+                </a>
+                <div class="dropdown-menu">
+                  <div class="dropdown-menu-content">
+                    <div
+                      class="dropdown-nav_list"
+                      data-simplebar-auto-hide="false"
+                      data-simplebar
+                    >
+                      <ul aria-labelledby="dropdownMenuLink4">
+                        <li class="dropdown-item dropdown4-element1">
+                          <a class="dropdown-link" href="#">Кандинский</a>
+                        </li>
+                        <li class="dropdown-item dropdown4-element2">
+                          <a class="dropdown-link" href="#">Маринетти</a>
+                        </li>
+                        <li class="dropdown-item dropdown4-element3">
+                          <a class="dropdown-link" href="#">Малевич</a>
+                        </li>
+                        <li class="dropdown-item dropdown4-element4">
+                          <a class="dropdown-link" href="#">Пикассо</a>
+                        </li>
+                        <li class="dropdown-item dropdown4-element5">
+                          <a class="dropdown-link" href="#">Художник15</a>
+                        </li>
+                        <li class="dropdown-item dropdown4-element5">
+                          <a class="dropdown-link" href="#">Художник16</a>
+                        </li>
+                        <li class="dropdown-item dropdown4-element5">
+                          <a class="dropdown-link" href="#">Художник17</a>
+                        </li>
+                        <li class="dropdown-item dropdown4-element5">
+                          <a class="dropdown-link" href="#">Художник18</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav_item-direction">
+              <div class="dropdown">
+                <a
+                  class="dropdown-toggle nav_link nav_link-direction"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink5"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Футуризм
+                </a>
+                <div class="dropdown-menu">
+                  <div class="dropdown-menu-content">
+                    <div
+                      class="dropdown-nav_list"
+                      data-simplebar-auto-hide="false"
+                      data-simplebar
+                    >
+                      <ul aria-labelledby="dropdownMenuLink5">
+                        <li class="dropdown-item dropdown5-element1">
+                          <a class="dropdown-link" href="#">Карра</a>
+                        </li>
+                        <li class="dropdown-item dropdown5-element2">
+                          <a class="dropdown-link" href="#">Прателла</a>
+                        </li>
+                        <li class="dropdown-item dropdown5-element3">
+                          <a class="dropdown-link" href="#">Северини</a>
+                        </li>
+                        <li class="dropdown-item dropdown5-element4">
+                          <a class="dropdown-link" href="#">Балла</a>
+                        </li>
+                        <li class="dropdown-item dropdown5-element5">
+                          <a class="dropdown-link" href="#">Художник15</a>
+                        </li>
+                        <li class="dropdown-item dropdown5-element5">
+                          <a class="dropdown-link" href="#">Художник16</a>
+                        </li>
+                        <li class="dropdown-item dropdown5-element5">
+                          <a class="dropdown-link" href="#">Художник17</a>
+                        </li>
+                        <li class="dropdown-item dropdown5-element5">
+                          <a class="dropdown-link" href="#">Художник18</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="main">
+        <div id="top"></div>
+        <section class="hero">
+          <div class="page-container hero_container">
+            <div class="hero_banner">
+              <div class="banner_slide">
+                <div class="hero_banner_content">
+                  <h1 class="hero_title">Прикоснитесь к&nbsp;прекрасному</h1>
+                  <p class="hero_descr">
+                    Мы вынуждены отталкиваться от того, что реализация
+                    намеченных плановых заданий создаёт предпосылки
+                    для&nbsp;новых предложений.
+                  </p>
+                </div>
+                <button class="btn hero_btn">Подписаться на рассылку</button>
+              </div>
+              <div class="banner_container banner banner1"></div>
+            </div>
+          </div>
+        </section>
+        <section id="about" class="about">
+          <div class="page-container about_container">
+            <div class="about_text">
+              <h2 class="about_title title">О нас</h2>
+              <p class="descr about_descr">
+                Ясность нашей позиции очевидна: семантический разбор внешних
+                противодействий однозначно определяет каждого участника как
+                способного принимать собственные решения касаемо распределения
+                внутренних резервов и ресурсов. Не следует, однако, забывать,
+                что высококачественный прототип будущего проекта влечет за собой
+                процесс внедрения и модернизации модели развития. Повседневная
+                практика показывает, что высокое качество позиционных
+                исследований создаёт необходимость включения в производственный
+                план целого ряда внеочередных мероприятий с учётом комплекса
+                распределения внутренних резервов и ресурсов. В рамках
+                спецификации современных стандартов, действия представителей
+                оппозиции набирают популярность среди определенных слоев
+                населения, а значит, должны быть разоблачены.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div id="сюда">
+          <a href="#top"> тест якорей </a>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/burger.js"></script>
+    <script src="./js/search.js"></script>
+  </body>
+</html>
