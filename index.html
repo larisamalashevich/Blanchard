@@ -7,19 +7,16 @@
 
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
-    />
-
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+   <link rel="stylesheet" href="./css/choices.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Blanchard</title>
   </head>
 
   <body>
-    <div class="page-container">
-      <header class="header">
-        <div class="page-container header_container-top">
+    <header class="header">
+      <div class="header-top">
+        <div class="container header-top_container">
           <button
             id="burger"
             class="btn_burger burger"
@@ -53,81 +50,80 @@
               class="logo-img"
             />
           </a>
+          <div id="menu" class="header-top_content menu">
+            <nav class="header_nav">
+              <ul class="nav_list">
+                <li class="close-menu-btn nav_item">
+                  <button class="btn-close" aria-label="закрыть меню">
+                    <svg
+                      width="100%"
+                      height="100%"
+                      viewbox="0 0 29 29"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="2.09082"
+                        width="29.5699"
+                        height="2.95699"
+                        transform="rotate(45 2.09082 0)"
+                      />
+                      <rect
+                        y="20.9092"
+                        width="29.5699"
+                        height="2.95699"
+                        transform="rotate(-45 0 20.9092)"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li class="nav_item">
+                  <a href="#about" class="nav_link">О&nbsp;нас </a>
+                </li>
+                <li class="nav_item">
+                  <a href="" class="nav_link">Галерея </a>
+                </li>
 
-          <nav class="header_center nav">
-            <ul id="menu" class="nav_list menu">
-              <li class="close-menu-btn">
-                <button class="btn-close" aria-label="закрыть меню">
-                  <svg
-                    class="X"
-                    width="29"
-                    height="29"
-                    viewbox="0 0 29 29"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="2.09082"
-                      width="29.5699"
-                      height="2.95699"
-                      transform="rotate(45 2.09082 0)"
-                      class="XlineX"
-                    />
-                    <rect
-                      y="20.9092"
-                      width="29.5699"
-                      height="2.95699"
-                      transform="rotate(-45 0 20.9092)"
-                      class="XlineX"
-                    />
-                  </svg>
-                </button>
-              </li>
-              <li class="nav_item">
-                <a href="#about" class="nav_link">О&nbsp;нас </a>
-              </li>
-              <li class="nav_item">
-                <a href="" class="nav_link">Галерея </a>
-              </li>
+                <li class="nav_item">
+                  <a href="" class="nav_link">Каталог </a>
+                </li>
 
-              <li class="nav_item">
-                <a href="" class="nav_link">Каталог </a>
-              </li>
+                <li class="nav_item">
+                  <a href="" class="nav_link">События </a>
+                </li>
+                <li class="nav_item">
+                  <a href="" class="nav_link">Издания </a>
+                </li>
+                <li class="nav_item">
+                  <a href="" class="nav_link">Проекты </a>
+                </li>
+                <li class="nav_item">
+                  <a href="" class="nav_link">Контакты </a>
+                </li>
+              </ul>
+            </nav>
 
-              <li class="nav_item">
-                <a href="" class="nav_link">События </a>
-              </li>
-              <li class="nav_item">
-                <a href="" class="nav_link">Издания </a>
-              </li>
-              <li class="nav_item">
-                <a href="" class="nav_link">Проекты </a>
-              </li>
-              <li class="nav_item">
-                <a href="" class="nav_link">Контакты </a>
-              </li>
-              <li class="nav_item">
-                <a
-                  href=""
-                  class="nav_link header_container-top--return return-icon"
-                  aria-label="Войти"
+            <div class="header-top_container--return">
+              <a
+                href=""
+                class="nav_link nav_link-return return-icon"
+                aria-label="Войти"
+              >
+                <svg
+                  class="return-icon-svg"
+                  width="13"
+                  height="13"
+                  viewbox="0 0 13 13"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    class="return-icon-svg"
-                    width="13"
-                    height="13"
-                    viewbox="0 0 13 13"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z"
-                    />
-                  </svg>
-                  Войти
-                </a>
-              </li>
-            </ul>
-          </nav>
+                  <path
+                    d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z"
+                  />
+                </svg>
+                Войти
+              </a>
+            </div>
+          </div>
+
           <button
             id="search"
             type="submit"
@@ -196,11 +192,9 @@
             <div class="close-menu-search-btn">
               <button class="btn-close" aria-label="закрыть поиск по сайту">
                 <svg
-                  class="X"
-                  width="29"
-                  height="29"
+                  width="100%"
+                  height="100%"
                   viewbox="0 0 29 29"
-                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <rect
@@ -208,22 +202,22 @@
                     width="29.5699"
                     height="2.95699"
                     transform="rotate(45 2.09082 0)"
-                    class="XlineX"
                   />
                   <rect
                     y="20.9092"
                     width="29.5699"
                     height="2.95699"
                     transform="rotate(-45 0 20.9092)"
-                    class="XlineX"
                   />
                 </svg>
               </button>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="page-container header_container-bottom">
+      <div class="header-bottom">
+        <div class="container header-bottom_container">
           <ul id="direction" class="nav_list">
             <li class="nav_item-direction">
               <div class="dropdown">
@@ -481,62 +475,146 @@
             </li>
           </ul>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <main class="main">
-        <div id="top"></div>
-        <section class="hero">
-          <div class="page-container hero_container">
-            <div class="hero_banner">
-              <div class="banner_slide">
-                <div class="hero_banner_content">
-                  <h1 class="hero_title">Прикоснитесь к&nbsp;прекрасному</h1>
-                  <p class="hero_descr">
-                    Мы вынуждены отталкиваться от того, что реализация
-                    намеченных плановых заданий создаёт предпосылки
-                    для&nbsp;новых предложений.
-                  </p>
-                </div>
-                <button class="btn hero_btn">Подписаться на рассылку</button>
-              </div>
-              <div class="banner_container banner banner1"></div>
-            </div>
-          </div>
-        </section>
-        <section id="about" class="about">
-          <div class="page-container about_container">
-            <div class="about_text">
-              <h2 class="about_title title">О нас</h2>
-              <p class="descr about_descr">
-                Ясность нашей позиции очевидна: семантический разбор внешних
-                противодействий однозначно определяет каждого участника как
-                способного принимать собственные решения касаемо распределения
-                внутренних резервов и ресурсов. Не следует, однако, забывать,
-                что высококачественный прототип будущего проекта влечет за собой
-                процесс внедрения и модернизации модели развития. Повседневная
-                практика показывает, что высокое качество позиционных
-                исследований создаёт необходимость включения в производственный
-                план целого ряда внеочередных мероприятий с учётом комплекса
-                распределения внутренних резервов и ресурсов. В рамках
-                спецификации современных стандартов, действия представителей
-                оппозиции набирают популярность среди определенных слоев
-                населения, а значит, должны быть разоблачены.
+    <main class="main">
+      <div id="top"></div>
+      <section class="hero">
+        <div class="container hero_container">
+          <div class="hero_banner_content">
+            <div class="hero_banner_theme">
+              <h1 class="hero_title">Прикоснитесь к&nbsp;прекрасному</h1>
+              <p class="hero_descr">
+                Мы вынуждены отталкиваться от того, что реализация намеченных
+                плановых заданий создаёт предпосылки для&nbsp;новых предложений.
               </p>
             </div>
+            <button class="btn hero_btn">Подписаться на рассылку</button>
           </div>
-        </section>
-
-        <div id="сюда">
-          <a href="#top"> тест якорей </a>
         </div>
-      </main>
+        <div class="hero_banner_container banner banner1"></div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container about_container">
+          <div class="about_text">
+            <h2 class="about_title title">О нас</h2>
+            <p class="descr about_descr">
+              Ясность нашей позиции очевидна: семантический разбор внешних
+              противодействий однозначно определяет каждого участника как
+              способного принимать собственные решения касаемо распределения
+              внутренних резервов и ресурсов. Не следует, однако, забывать, что
+              высококачественный прототип будущего проекта влечет за собой
+              процесс внедрения и модернизации модели развития. Повседневная
+              практика показывает, что высокое качество позиционных исследований
+              создаёт необходимость включения в производственный план целого
+              ряда внеочередных мероприятий с учётом комплекса распределения
+              внутренних резервов и ресурсов. В рамках спецификации современных
+              стандартов, действия представителей оппозиции набирают
+              популярность среди определенных слоев населения, а значит, должны
+              быть разоблачены.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="gallery">
+        <div class="container gallery_container">
+          <div class="gallery_content">
+            <div class="gallery_content-left">
+              <h2 class="gallery_title title">Галерея</h2>
+              
+              <div class="gallery_selector">
+                <p class="descr gallery_filter-subtitle">Фильтр:</p>
+                
+   
+                <label class="custom-select">
+                  <select id="gallery-filter" class="select content-descr">
+                    <option class="select-item" label="Живопись" value="Живопись">Живопись</option>
+                    <option class="select-item"  label="Рисунок" value="Рисунок">Рисунок</option>
+                    <option class="select-item" label="Скульптура" value="Скульптура">Скульптура</option>
+                    
+                  </select>
+                </label>
+              
+              </div>
+              
+            </div>
+
+            <div class="gallery_content-slider">
+              <div class="custom-controller">
+                <div class="custom-swiper-button-prev"><svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" fill="#666666"/>
+                  <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" stroke="none"/>
+                  <path d="M14 20L19 15L14 10" stroke="white"/>
+                  </svg></div>
+                <div class="custom-swiper-pagination"></div>
+                <div class="custom-swiper-button-next"><svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" fill="#666666"/>
+                  <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z" stroke="none"/>
+                  <path d="M14 20L19 15L14 10" stroke="white"/>
+                  </svg></div>
+              </div>
+              <div class="custom-swiper-container gallery1">
+                <div class="custom-swiper-wrapper">
+                 
+                  <div class="custom-swiper-slide galery-img Art1" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art2" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art3" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art4" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art5" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art6" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art7" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art8" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art9" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art10" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art11" data-filter_type="Живопись"></div>
+                  <div class="custom-swiper-slide galery-img Art12" data-filter_type="Живопись"></div>
+                 
+                  <div class="custom-swiper-slide galery-img Draw1" data-filter_type="Рисунок"></div>
+                  <div class="custom-swiper-slide galery-img Draw2" data-filter_type="Рисунок"></div>
+                  <div class="custom-swiper-slide galery-img Draw3" data-filter_type="Рисунок"></div>
+                  <div class="custom-swiper-slide galery-img Draw4" data-filter_type="Рисунок"></div>
+                  <div class="custom-swiper-slide galery-img Draw5" data-filter_type="Рисунок"></div>
+                  <div class="custom-swiper-slide galery-img Draw6" data-filter_type="Рисунок"></div>
+                  
+                  <div class="custom-swiper-slide galery-img Sculpture1" data-filter_type="Скульптура"></div>
+                  <div class="custom-swiper-slide galery-img Sculpture2" data-filter_type="Скульптура"></div>
+                  <div class="custom-swiper-slide galery-img Sculpture3" data-filter_type="Скульптура"></div>
+                  <div class="custom-swiper-slide galery-img Sculpture4" data-filter_type="Скульптура"></div>
+                  <div class="custom-swiper-slide galery-img Sculpture5" data-filter_type="Скульптура"></div>
+                  <div class="custom-swiper-slide galery-img Sculpture6" data-filter_type="Скульптура"></div> 
+                </div>
+              
+              </div>
+              
+            </div>
+          </div>
+          <div class="gallery_banner"></div>
+         <div class="gallery_content-authorization">
+            <p class="descr gallery_descr">
+              Вам предоставляется 10 бесплатных скачиваний. Для увеличения
+              количества скачиваний  <a class="gallery_descr-link" href="#">авторизуйтесь</a>, либо воспользуйтесь
+              лицензией.
+            </p>
+                 </div>
     </div>
+      </section>
+
+      <div id="сюда">
+        <a href="#top"> тест якорей </a>
+      </div>
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-    <script src="./js/main.js"></script>
     <script src="./js/burger.js"></script>
     <script src="./js/search.js"></script>
+    <script src="./js/choices.min.js"></script>
+  <script src="./js/custom-swiper.js">
+    </script>
+  <script src="./js/adaptiv-custom-swiper.js">  </script>
   </body>
 </html>
