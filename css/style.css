@@ -39,7 +39,6 @@
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #e5e5e5;
-  touch-action: none;
 }
 
 * {
@@ -844,6 +843,7 @@ color: var(--primary-color);
 .custom-swiper-container {
   overflow: hidden;
   position: relative;
+  touch-action: none;
 }
 .custom-swiper-wrapper {
   display: flex;
