@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded',function() {
   document.querySelector('#burger').addEventListener('click',function() {
     const menutag = document.querySelector('#menu')
+    
     menutag.classList.toggle('menu_is-active')  
   })
 

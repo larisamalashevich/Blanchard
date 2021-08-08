@@ -54,7 +54,7 @@ defaultSelest();
        
 
         const galery = document.querySelector('.gallery1')
-        const filterSelector = document.querySelector('#gallery-filter')
+        const filterSelector = document.querySelector('.gallery-filter')
 
         function onGaleryFilterChange(filter){
           console.log('value-changed', filter)

@@ -36,7 +36,7 @@ function duplicateDropDecorator(functor, delay=10){
   }
 
 
-  const SWIPER_MULTIPLYER = 0.5; //часть пути, которую необходимо пройти пальцу, чтобы свайп защитался
+  const SWIPER_MULTIPLYER = 0.4; //часть пути, которую необходимо пройти пальцу, чтобы свайп защитался
 
   function CustomSwiper(selector, props){
     this.element = document.querySelector(selector)
