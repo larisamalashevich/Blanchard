@@ -1,5 +1,6 @@
 :root {
   --black-color: #000;
+  --blackpale-color: #666;
   --white-color: #fff;
   --whitepale-color: #999;
   --text-color: #333;
@@ -884,21 +885,23 @@ h1 {
   padding-top: 3px;
 }
 
-.custom-swiper-button-prev {
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
+   width: 30px;
+  height: 30px;
+  cursor: pointer;
+  }
+ .custom-swiper-button-prev {
   transform: matrix(-1, 0, 0, 1, 0, 0);
 }
+
 
 .custom-swiper-button-disabled {
   pointer-events: none;
   opacity: 0.5;
 }
 
-.custom-swiper-button-prev,
-.custom-swiper-button-next {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
+
 .custom-swiper-container {
   overflow: hidden;
   position: relative;
@@ -1174,19 +1177,19 @@ p {
   background-size: 100%;
 }
 .event1 {
-  background-image: url(/img/event1.jpg);
+  background-image: url(../img/event1.jpg);
 }
 .event2 {
-  background-image: url(/img/event2.jpg);
+  background-image: url(../img/event2.jpg);
 }
 .event3 {
-  background-image: url(/img/event3.jpg);
+  background-image: url(../img/event3.jpg);
 }
 .event4 {
-  background-image: url(/img/event4.jpg);
+  background-image: url(../img/event4.jpg);
 }
 .event5 {
-  background-image: url(/img/event5.jpg);
+  background-image: url(../img/event5.jpg);
 }
 .events_item-info {
   font-weight: 600;
