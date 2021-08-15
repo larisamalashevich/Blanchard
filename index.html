@@ -19,7 +19,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header">   
       <div class="header-top">
         <div class="container header-top_container">
           <button
@@ -48,7 +48,7 @@
             </svg>
           </button>
 
-          <a href="" class="header-logo">
+          <a href="" class="header-logo nav_link ">
             <img
               src="./img/Лого.svg"
               alt="Логотип-Blachard-картинная галерея"
@@ -583,17 +583,16 @@
 
             <div class="gallery_content-slider">
               <div class="custom-controller">
-                <div class="custom-swiper-button-prev"  tabindex="0" >
-                  <svg
+                <button class="custom-swiper-button-prev" >
+                  <svg class="custom-swiper-button-prev-svg"
                     width="30"
                     height="30"
                     viewbox="0 0 30 30"
-                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
-                      fill="#666666"
+                      
                     />
                     <path
                       d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
@@ -601,19 +600,18 @@
                     />
                     <path d="M14 20L19 15L14 10" stroke="white" />
                   </svg>
-                </div>
+                </button>
                 <div class="custom-swiper-pagination"></div>
-                <div class="custom-swiper-button-next"  tabindex="0">
-                  <svg
+                <button class="custom-swiper-button-next">
+                  <svg class="custom-swiper-button-next-svg"
                     width="30"
                     height="30"
                     viewbox="0 0 30 30"
-                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
                       d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
-                      fill="#666666"
+                      
                     />
                     <path
                       d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
@@ -621,7 +619,7 @@
                     />
                     <path d="M14 20L19 15L14 10" stroke="white" />
                   </svg>
-                </div>
+                </button>
               </div>
               <div class="custom-swiper-container gallery1">
                 <div class="custom-swiper-wrapper">
@@ -752,8 +750,8 @@
                     class="catalog_btn_step"
                     data-path="one"
                     id="tab-1"
-                    aria-selected="false"
-                  >
+                    
+                                     >
                     <img src="./img/каталог/flag1.svg" alt="флагФранции" />
                   </button>
                 </li>
@@ -761,9 +759,9 @@
                   <button
                     role="tab"
                     class="catalog_btn_step"
-                    data-path="one"
+                    data-path="two"
                     id="tab-2"
-                    aria-selected="false"
+                
                   >
                     <img src="./img/каталог/flag2.svg" alt="флагГермании" />
                   </button>
@@ -773,9 +771,9 @@
                     role="tab"
                     class="catalog_btn_step catalog_btn_step__is_active"
                     data-default="true"
-                    data-path="one"
+                    data-path="three"
                     id="tab-3"
-                    aria-selected="true"
+                    aria-selected="true" 
                   >
                     <img src="./img/каталог/flag3.svg" alt="флагИталии" />
                   </button>
@@ -784,9 +782,9 @@
                   <button
                     role="tab"
                     class="catalog_btn_step"
-                    data-path="one"
+                    data-path="four"
                     id="tab-4"
-                    aria-selected="false"
+                    aria-selected="true" 
                   >
                     <img src="./img/каталог/flag4.svg" alt="флагРоссии" />
                   </button>
@@ -795,16 +793,61 @@
                   <button
                     role="tab"
                     class="catalog_btn_step"
-                    data-path="one"
+                    data-path="five"
                     id="tab-5"
-                    aria-selected="false"
+                    
                   >
-                    <img src="./img/каталог/flag5.svg" alt="флаг?" />
+                    <img src="./img/каталог/flag5.svg" alt="флагБельгия" />
                   </button>
                 </li>
               </ul>
             </div>
-            <p class="descr catalog_descr">
+            <div class="catalog_tabs_descr_container">
+            <div class="catalog_tabs_content catalog_tabs_content_is_invisible"
+          data-target="one"
+          aria-labelledby="tab-1">
+            <p class="descr catalog_descr" role="tabpanel">
+              Les actionnaires des plus grandes entreprises qui représentent un brillant
+              exemple de culture politique continentale-européenne,
+              seront déclarés contraires aux normes universelles d'éthique et de moralité.
+              Ne faisant qu'une partie de l'image globale, cherchant à évincer
+              la fabrication traditionnelle, la nanotechnologie restent à ce jour
+              l'héritage des libéraux qui aspirent à être fonctionnellement dispersés sur
+              éléments indépendants.
+            </p>
+          </div>
+          <div class="catalog_tabs_content catalog_tabs_content_is_invisible"
+          data-target="two"
+                aria-labelledby="tab-2">
+            <p class="descr catalog_descr" role="tabpanel">
+              Die Aktionäre der größten Unternehmen, die eine lebendige darstellen
+ ein Beispiel für eine kontinentaleuropäische Art politischer Kultur,
+ es wird erklärt, dass sie gegen die universellen Normen der Ethik und Moral verstoßen.
+ Als nur ein Teil des Gesamtbildes, versuchen zu verdrängen
+ traditionelle Produktion, Nanotechnologie bis heute
+ die Liberalen, die sich funktional auseinander setzen wollen
+ unabhängige Elemente.
+ <br/><br/>
+            </p>
+          </div>
+          <div class="catalog_tabs_content"
+          data-target="three"
+                aria-labelledby="tab-3">
+            <p class="descr catalog_descr" role="tabpanel">
+              Gli azionisti delle più grandi aziende che rappresentano luminoso
+              un esempio di un tipo di cultura politica continentale-europea,
+              saranno dichiarati in violazione delle norme universali di etica e moralità.
+              Essendo solo una parte del quadro generale, cercando di soppiantare
+              la produzione tradizionale, le nanotecnologie rimangono ancora oggi
+              il destino dei liberali che bramano di essere funzionalmente distanziati
+              elementi indipendenti.
+           
+            </p>
+          </div>
+          <div class="catalog_tabs_content catalog_tabs_content_is_invisible"
+          data-target="four"
+          aria-labelledby="tab-4">
+            <p class="descr catalog_descr" role="tabpanel">
               Акционеры крупнейших компаний, которые представляют собой яркий
               пример континентально-европейского типа политической культуры,
               будут объявлены нарушающими общечеловеческие нормы этики и морали.
@@ -812,9 +855,25 @@
               традиционное производство, нанотехнологии и по сей день остаются
               уделом либералов, которые жаждут быть функционально разнесены на
               независимые элементы.
+           
             </p>
           </div>
-
+          <div class="catalog_tabs_content catalog_tabs_content_is_invisible"
+          data-target="five"
+                aria-labelledby="tab-5">
+            <p class="descr catalog_descr" role="tabpanel">
+              De aandeelhouders van de grootste bedrijven, die een levendige
+voorbeeld van het continentaal-Europese type politieke cultuur,
+zal worden verklaard in strijd met universele normen van ethiek en moraliteit.
+ Nanotechnologie, die slechts een deel van het totale beeld vormt, 
+traditionele productie, blijft tot op de dag van vandaag
+het lot van liberalen die staan te popelen om functioneel te worden gescheiden in
+onafhankelijke elementen.
+           
+            </p>
+          </div>
+          </div>
+        </div>
           <article class="catalog_content">
             <div id="content" class="catalog_artist">
               <div id="Доменико_Гирландайо" class="artist">
@@ -882,128 +941,138 @@
                 </svg>
               </div>
 
-              <p
+              <ul
                 id="ids"
                 class="descr catalog_list-artists catalog_list-artists-size"
               >
+              <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
-                  >Бенедетто ди Биндо Бергоньоне,</a
-                >
-                <a
+                  >Бенедетто ди Биндо Бергоньоне,</a>
+              </li>
+              <li> 
+              <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Амброджо Биссоло,</a
                 >
-                <a
+              </li>
+              <li><a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Франческо Больтраффио,</a
-                >
-                <a
+                ></li>
+              <li><a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Джованни Бонсиньори,</a
-                >
-                <a
+                ></li>
+              <li><a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Франческо Боттичини,</a
-                >
-                <a
+                ></li>
+                <li><a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Рафаэлло Брамантино Бреа,</a
-                >
-                <a
+                ></li>
+              <li><a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Людовико Бьяджо д’Антонио Туччи,</a
-                >
-                <a
+                ></li>
+              <li><a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Веккьетта,</a
-                >
-                <a
+                ></li>
+              <li><a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Андреа Верроккьо,</a
-                >
-                <a
+                ></li>
+                <li><a
                   href="#content"
                   data-target="#Доменико_Гирландайо"
                   class="artist-name-link"
                   >Доменико Гирландайо,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Беноццо Гоццоли Граначчи,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Франческо Грегорио ди Чекко,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Джованни да Удине,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Джованни ди Паоло,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Джорджоне,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Парентино,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Бернардо Пезеллино,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Пьетро Перуджино Перуцци,</a
-                >
+                ></li>
+                <li>
                 <a
                   href="#content"
                   data-target="#X-художник"
                   class="artist-name-link"
                   >Бальдассаре Пизанелло Пинтуриккьо</a
                 >
-                <br />
-                <br />
-                <br />
-              </p>
+              </li>
+                   </ul>
 
               <div class="catalog_list_item">
                 <h3 class="catalog_item-years">C 1500 по 1599 гг.</h3>
@@ -1248,9 +1317,10 @@
           <h2 class="events_title title">События</h2>
           
           <div class="events_container_cards">
-            <input type="checkbox" id="show-all">
-            <div class="events-list">
-             <div class="events_item img-event event1">
+            <input type="checkbox"  
+            name="check" id="show-all">
+            <ul class="events-list">
+             <li class="events_item img-event event1">
                 <div class="events_inner">
                   <p class="events_item-info">
                     Музей им. Щусева<br> с 20 марта по 30 апреля
@@ -1263,13 +1333,13 @@
                     основатель художественной династии, которую продолжили его
                     брат Давид и сын Ридольфо.
                   </p>
-                </div>
                 <div class="events_item-link">
                   <a href="" class="link">Подробнее</a>
                 </div>
               </div>
+              </li>
              
-            <div class="events_item img-event event2">
+             <li class="events_item img-event event2">
                 <div class="events_inner">
                   <p class="events_item-info">
                     ММОМА<br>
@@ -1282,12 +1352,12 @@
                     Высокий уровень вовлечения представителей целевой аудитории
                     является четким доказательством простого факта.
                   </p>
+                  <div class="events_item-link">
+                    <a href="" class="link">Подробнее</a>
+                  </div>
                 </div>
-                <div class="events_item-link">
-                  <a href="" class="link">Подробнее</a>
-                </div>
-              </div>
-            <div class="events_item img-event event3">
+             </li>
+            <li class="events_item img-event event3">
                 <div class="events_inner">
                   <p class="events_item-info">
                     Еврейский музей<br>
@@ -1299,12 +1369,12 @@
                     методология разработки играет важную роль в формировании
                     глубокомысленных рассуждений.
                   </p>
+                  <div class="events_item-link">
+                    <a href="" class="link">Подробнее</a>
+                  </div>
                 </div>
-                <div class="events_item-link">
-                  <a href="" class="link">Подробнее</a>
-                </div>
-              </div>
-            <div class="events_item img-event event4 events_item-hidden">
+                   </li>
+            <li class="events_item img-event event4">
                 <div class="events_inner">
                   <p class="events_item-info">
                     Третьяковка на Крымском валу<br>
@@ -1314,12 +1384,12 @@
                   <p class="events_item-text">
                     Внезапно, реплицированные с зарубежных источников, современные исследования.
                   </p>
+                  <div class="events_item-link">
+                    <a href="" class="link">Подробнее</a>
+                  </div>
                 </div>
-                <div class="events_item-link">
-                  <a href="" class="link">Подробнее</a>
-                </div>
-              </div>
-            <div class="events_item img-event event5 events_item-hidden">
+                             </li>
+            <li class="events_item img-event event5">
                 <div class="events_inner">
                   <p class="events_item-info">
                     ММОАМ <br>
@@ -1329,13 +1399,13 @@
                   <p class="events_item-text">
                     Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.
                   </p>
+                  <div class="events_item-link">
+                    <a href="" class="link">Подробнее</a>
+                  </div>
                 </div>
-                <div class="events_item-link">
-                  <a href="" class="link">Подробнее</a>
-                </div>
-              </div>
-        </div>
-          <label class="btn events_btn" for="show-all"> Все события</label>
+                  </li>
+            </ul>
+          <label  for="show-all" class="btn events_btn" onkeydown="check(event)" tabindex="0" > Все события</label>
         </div>
         </div>
         <div class=" swiper-container">
@@ -1354,11 +1424,12 @@
                   основатель художественной династии, которую продолжили его
                   брат Давид и сын Ридольфо.
                 </p>
-                </div>
+                
                 <div class="events_item-link">
                 <a href="" class="link">Подробнее</a>
                 </div>
-               </div>
+              </div>
+              </div>
               </div>
             <div class="swiper-slide"> 
             <div class="events_item img-event event2">
@@ -1374,11 +1445,12 @@
                   Высокий уровень вовлечения представителей целевой аудитории
                   является четким доказательством простого факта.
                 </p>
-              </div>
+              
               <div class="events_item-link">
                 <a href="" class="link">Подробнее</a>
               </div>
-              </div>
+            </div>
+            </div>
             </div>
             <div class="swiper-slide"> 
             <div class="events_item img-event event3">
@@ -1393,12 +1465,13 @@
                   методология разработки играет важную роль в формировании
                   глубокомысленных рассуждений.
                 </p>
-              </div>
+             
               <div class="events_item-link">
                 <a href="" class="link">Подробнее</a>
               </div>
             </div>
             </div>
+          </div>
             <div class="swiper-slide"> 
             <div class="events_item img-event event4">
               <div class="events_inner">
@@ -1410,9 +1483,10 @@
                 <p class="events_item-text">
                   Внезапно, реплицированные с зарубежных источников, современные исследования.
                 </p>
-              </div>
+             
               <div class="events_item-link">
                 <a href="" class="link">Подробнее</a>
+              </div>
               </div>
             </div>
             </div>
@@ -1427,9 +1501,10 @@
                 <p class="events_item-text">
                   Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.
                 </p>
-              </div>
+              
               <div class="events_item-link">
                 <a href="" class="link">Подробнее</a>
+              </div>
               </div>
             </div>
             </div>

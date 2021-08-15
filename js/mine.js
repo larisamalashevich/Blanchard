@@ -33,19 +33,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //tab
 document.addEventListener("DOMContentLoaded", function () {
-  document
-    .querySelectorAll(".catalog_btn_step")
-    .forEach(function (catalogBtnStep) {
+  document.querySelectorAll(".catalog_btn_step").forEach(function (catalogBtnStep) {
       catalogBtnStep.addEventListener("click", function (event) {
-        // const path=event.currentTarget.dataset.path
+         const path=event.currentTarget.dataset.path
 
-        // document.querySelectorAll('.catalog_elements').forEach(function(catalogElements) {
-        //   catalogElements.classList.add('catalog_content_is_invisible')
-        // })
+         document.querySelectorAll('.catalog_tabs_content').forEach(function(catalogTabContent) {
+          catalogTabContent.classList.remove('catalog_tabs_content_is_visible')
+          catalogTabContent.classList.add('catalog_tabs_content_is_invisible')
+        })
 
-        // document.querySelector(`[data-target="${path}"]`).classList.remove('catalog_content_is_invisible')
-
-        document
+         document.querySelector(`[data-target="${path}"]`).classList.remove('catalog_tabs_content_is_invisible')
+         document.querySelector(`[data-target="${path}"]`).classList.add('catalog_tabs_content_is_visible')
+        
+         document
           .querySelectorAll(".catalog_btn_step__is_active")
           .forEach(function (button) {
             button.setAttribute("aria-selected", "false");
@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 });
+
 //swiper-init
 new Swiper(".swiper-container", {
   // Optional parameters
@@ -76,6 +77,7 @@ new Swiper(".swiper-container", {
   //  delay: 3000,
   // },
 });
+
 //adaptiv-custom-swiper
 (document.querySelector("#focused-tooltip") || { focus: () => {} }).focus();
 
@@ -156,6 +158,7 @@ let swiper = (() => {
   );
   return swiper;
 })();
+
 //accordion-init
 $( function() {
     $( "#accordion" ).accordion({
@@ -186,3 +189,12 @@ document.addEventListener('DOMContentLoaded',function() {
         })
     })
     })
+//Подключение Enter
+ function check(event) {
+  
+      if(event.code === 'Enter' || event.code === 'Space')
+      {
+        const checkbox = document.querySelector('#show-all')
+        checkbox.checked = !checkbox.checked
+      }
+    }

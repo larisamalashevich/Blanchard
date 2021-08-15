@@ -84,7 +84,7 @@ function duplicateDropDecorator(functor, delay=10){
 
     this.wrapperElement.addEventListener('pointerup' , (event) => this.onTouchEnd(event, 'up'))
     this.wrapperElement.addEventListener('pointercancel' , (event) => this.onTouchEnd(event, 'cansel'))
-    this.wrapperElement.addEventListener('pointerout' , (event) => this.onTouchEnd(event, 'out'))
+    // this.wrapperElement.addEventListener('pointerout' , (event) => event.target == this.element && this.onTouchEnd(event, 'out'))
 
     this.wrapperElement.addEventListener('pointermove' , (event) => this.onTouchMove(event))
   }
@@ -95,6 +95,9 @@ function duplicateDropDecorator(functor, delay=10){
   const positionExtractor = (event) => event.clientX
 
   CustomSwiper.prototype.onTouchStart = function(event){
+
+
+    console.log('touch start')
     event.preventDefault();
     this.wrapperElement.setPointerCapture(event.pointerId)
     this.wrapperElement.style.transition = "none"
@@ -108,7 +111,7 @@ function duplicateDropDecorator(functor, delay=10){
   }
 
   CustomSwiper.prototype.onTouchEnd = function(event, reason){
-  
+    console.log('touch end')
     if(this.moveAnchor){
       this.wrapperElement.releasePointerCapture(event.pointerId)
 
@@ -129,6 +132,7 @@ function duplicateDropDecorator(functor, delay=10){
   }
 
   CustomSwiper.prototype.onTouchMove = throttle(function(event){
+    console.log('touch move')
     event.preventDefault();
     if(this.moveAnchor){
       const currentPostion = positionExtractor(event)
