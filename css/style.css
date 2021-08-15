@@ -36,7 +36,9 @@
   font-weight: 700;
   font-style: normal;
 }
-
+html{
+  scroll-padding-top: 170px;
+}
 body {
   font-family: "Open Sans", sans-serif;
   background-color:var(--white-color);
@@ -1415,7 +1417,9 @@ p {
 
 @media (max-width: 1155px) {
   /* изменения header*/
-
+  html{
+    scroll-padding-top: 100px;
+  }
   .header-logo {
     margin-right: 0;
     width: 187px;
@@ -1850,6 +1854,10 @@ p {
 }
 
 @media (max-width: 500px) {
+  
+  html{
+    scroll-padding-top: 45px;
+  }
   .container {
     padding-left: 15px;
     padding-right: 15px;

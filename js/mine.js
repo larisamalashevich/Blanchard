@@ -6,11 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
     menutag.classList.toggle("menu_is-active");
   });
 
+  const closeMenu = () => document.querySelector("#menu").classList.remove("menu_is-active")
+
   document
     .querySelector(".close-menu-btn")
-    .addEventListener("click", function () {
-      document.querySelector("#menu").classList.remove("menu_is-active");
-    });
+    .addEventListener("click", closeMenu);
+
+  document.querySelector("#menu").querySelectorAll('.nav_link').forEach(link => {
+    link.addEventListener('click', closeMenu)
+  })
+
+  
+
 });
 
 //меню-поиска
