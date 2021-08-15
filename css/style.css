@@ -827,7 +827,7 @@ h1 {
   width: calc(100% - 50px);
   height:  calc(100% - 50px);
   background-color: rgba(0, 0, 0, 0.5);
-  background-image:url("/img/галерея/loop+.png");
+  background-image:url("../img/галерея/loop+.png");
   background-repeat: no-repeat;
   background-position: center center;
   transition: opacity .3s linear;
