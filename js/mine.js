@@ -6,18 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
     menutag.classList.toggle("menu_is-active");
   });
 
-  const closeMenu = () => document.querySelector("#menu").classList.remove("menu_is-active")
+  const closeMenu = () =>
+    document.querySelector("#menu").classList.remove("menu_is-active");
 
   document
     .querySelector(".close-menu-btn")
     .addEventListener("click", closeMenu);
 
-  document.querySelector("#menu").querySelectorAll('.nav_link').forEach(link => {
-    link.addEventListener('click', closeMenu)
-  })
-
-  
-
+  document
+    .querySelector("#menu")
+    .querySelectorAll(".nav_link")
+    .forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 });
 
 //меню-поиска
@@ -40,19 +41,31 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //tab
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".catalog_btn_step").forEach(function (catalogBtnStep) {
+  document
+    .querySelectorAll(".catalog_btn_step")
+    .forEach(function (catalogBtnStep) {
       catalogBtnStep.addEventListener("click", function (event) {
-         const path=event.currentTarget.dataset.path
+        const path = event.currentTarget.dataset.path;
 
-         document.querySelectorAll('.catalog_tabs_content').forEach(function(catalogTabContent) {
-          catalogTabContent.classList.remove('catalog_tabs_content_is_visible')
-          catalogTabContent.classList.add('catalog_tabs_content_is_invisible')
-        })
+        document
+          .querySelectorAll(".catalog_tabs_content")
+          .forEach(function (catalogTabContent) {
+            catalogTabContent.classList.remove(
+              "catalog_tabs_content_is_visible"
+            );
+            catalogTabContent.classList.add(
+              "catalog_tabs_content_is_invisible"
+            );
+          });
 
-         document.querySelector(`[data-target="${path}"]`).classList.remove('catalog_tabs_content_is_invisible')
-         document.querySelector(`[data-target="${path}"]`).classList.add('catalog_tabs_content_is_visible')
-        
-         document
+        document
+          .querySelector(`[data-target="${path}"]`)
+          .classList.remove("catalog_tabs_content_is_invisible");
+        document
+          .querySelector(`[data-target="${path}"]`)
+          .classList.add("catalog_tabs_content_is_visible");
+
+        document
           .querySelectorAll(".catalog_btn_step__is_active")
           .forEach(function (button) {
             button.setAttribute("aria-selected", "false");
@@ -106,15 +119,15 @@ const defaultSelest = () => {
 };
 defaultSelest();
 
-let swiper = (() => {
-  let swiper = new CustomSwiper(".gallery1", {
+let [swiper, bookSwiper, projectSwiper] = (() => {
+  const swiper = new CustomSwiper(".gallery1", {
     pagination: {
-      el: ".custom-swiper-pagination",
+      el: ".custom-swiper-pagination.gallery-nav",
       type: "fraction",
     },
     navigation: {
-      nextEl: ".custom-swiper-button-next",
-      prevEl: ".custom-swiper-button-prev",
+      nextEl: ".custom-swiper-button-next.gallery-nav",
+      prevEl: ".custom-swiper-button-prev.gallery-nav",
     },
     breakpoints: {
       1502: {
@@ -137,14 +150,13 @@ let swiper = (() => {
     },
   });
 
-  const galery = document.querySelector(".gallery1");
+  const gallery = document.querySelector(".gallery1");
   const filterSelector = document.querySelector(".gallery-filter");
 
   function onGaleryFilterChange(filter) {
     console.log("value-changed", filter);
 
     // const choices__list =
-
     document
       .querySelector(".gallery")
       .querySelector(".choices__list--dropdown")
@@ -152,8 +164,7 @@ let swiper = (() => {
       .forEach((option) => {
         option.hidden = option.dataset.value !== filter ? false : true;
       });
-
-    galery.querySelectorAll(".custom-swiper-slide").forEach((slide) => {
+    gallery.querySelectorAll(".custom-swiper-slide").forEach((slide) => {
       slide.hidden = slide.dataset.filter_type === filter ? false : true;
     });
     swiper.update();
@@ -163,45 +174,129 @@ let swiper = (() => {
   filterSelector.addEventListener("change", (event) =>
     onGaleryFilterChange(event.target.value)
   );
-  return swiper;
+
+  //adaptiv-custom-swiper-books
+  const bookSwiper = new CustomSwiper(".books1", {
+    pagination: {
+      el: ".custom-swiper-pagination.books-nav",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".custom-swiper-button-next.books-nav",
+      prevEl: ".custom-swiper-button-prev.books-nav",
+    },
+    breakpoints: {
+      1502: {
+        slidesPerView: 3,
+        slidesPerColumn: 1,
+        slidesPerGroup: 3,
+        spaceBetween: 50,
+      },
+      800: {
+        slidesPerView: 2,
+        slidesPerColumn: 1,
+        slidesPerGroup: 2,
+        spaceBetween: 50,
+      },
+      500: {
+        slidesPerView: 2,
+        slidesPerColumn: 1,
+        slidesPerGroup: 2,
+        spaceBetween: 1,
+      },
+      0: {
+        slidesPerView: 2,
+        spaceAround: 15,
+        slidesPerColumn: 4,
+      },
+    },
+  });
+
+  // adaptiv - custom - swiper - project;
+  const projectSwiper = new CustomSwiper(".projects1", {
+    // pagination: {
+    //   el: ".custom-swiper-pagination.projects-nav",
+    //   type: "fraction",
+    // },
+    navigation: {
+      nextEl: ".custom-swiper-button-next.projects-nav",
+      prevEl: ".custom-swiper-button-prev.projects-nav",
+    },
+    breakpoints: {
+      1502: {
+        slidesPerView: 3,
+        slidesPerColumn: 1,
+        slidesPerGroup: 3,
+        spaceBetween: 50,
+      },
+      800: {
+        slidesPerView: 2,
+        slidesPerColumn: 1,
+        slidesPerGroup: 2,
+        spaceBetween: 50,
+      },
+      500: {
+        slidesPerView: 2,
+        slidesPerColumn: 1,
+        slidesPerGroup: 2,
+        spaceBetween: 34,
+      },
+      0: {
+        slidesPerView: 1,
+        slidesPerColumn: 1,
+        slidesPerGroup: 1,
+      },
+    },
+  });
+  bookSwiper.update();
+  projectSwiper.update();
+  return [swiper, bookSwiper, projectSwiper];
 })();
 
 //accordion-init
-$( function() {
-    $( "#accordion" ).accordion({
-      collapsible: true,
-      active : false,
-      heightStyle: "content",
-      header: 'div'
-    });
-  } );
+$(function () {
+  $("#accordion").accordion({
+    collapsible: true,
+    active: 0,
+    heightStyle: "content",
+    header: "div",
+  });
+});
+
 //переключение карточек по имени художника
-document.addEventListener('DOMContentLoaded',function() {
-    const ids = document.querySelector('#ids').querySelectorAll('a')
-    
-    
-    document.querySelector('#content').querySelectorAll('.artist').forEach((artist) => {
-        
-        artist.hidden = true
-            } )
-        document.querySelector('#Доменико_Гирландайо').hidden = false
-    
-    ids.forEach(link => {
-        link.addEventListener('click', (event) => {
-            document.querySelector('#content').querySelectorAll('.artist').forEach((artist) => {
-                
-                artist.hidden = true
-            } )
-            document.querySelector(link.dataset.target).hidden = false
-        })
-    })
-    })
+document.addEventListener("DOMContentLoaded", function () {
+  const ids = document.querySelector("#ids").querySelectorAll("a");
+
+  document
+    .querySelector("#content")
+    .querySelectorAll(".artist")
+    .forEach((artist) => {
+      artist.hidden = true;
+    });
+  document.querySelector("#Доменико_Гирландайо").hidden = false;
+
+  ids.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      document
+        .querySelector("#content")
+        .querySelectorAll(".artist")
+        .forEach((artist) => {
+          artist.hidden = true;
+        });
+      document.querySelector(link.dataset.target).hidden = false;
+    });
+  });
+});
 //Подключение Enter
- function check(event) {
-  
-      if(event.code === 'Enter' || event.code === 'Space')
-      {
-        const checkbox = document.querySelector('#show-all')
-        checkbox.checked = !checkbox.checked
-      }
-    }
+function check(event) {
+  if (event.code === "Enter" || event.code === "Space") {
+    const checkbox = document.querySelector("#show-all");
+    checkbox.checked = !checkbox.checked;
+  }
+}
+//Отключение фокусф при клике
+document.querySelectorAll(".catalog_list_item").forEach((accordionHeader) => {
+  accordionHeader.addEventListener("click", (event) => {
+    event.currentTarget.blur();
+  });
+});

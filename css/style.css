@@ -8,6 +8,7 @@
   --darkprimary-color: #7943a4;
   --lightprimary-color: #c283f3;
   --paleprimary-color: #d1a9f0;
+  --border-color: #cacaca;
 }
 
 @font-face {
@@ -36,12 +37,12 @@
   font-weight: 700;
   font-style: normal;
 }
-html{
+html {
   scroll-padding-top: 170px;
 }
 body {
   font-family: "Open Sans", sans-serif;
-  background-color:var(--white-color);
+  background-color: var(--white-color);
 }
 
 * {
@@ -84,6 +85,11 @@ h3 {
   font-weight: 600;
   font-size: 24px;
   color: var(--text-color);
+  margin-bottom: 0;
+}
+h4 {
+  font-weight: 700;
+  font-size: 16px;
 }
 
 button {
@@ -143,8 +149,7 @@ button {
 .header_logo {
   height: 40px;
   max-width: 173px;
-  }
-  
+}
 
 .header-top_content {
   display: flex;
@@ -657,8 +662,8 @@ h1 {
   background-image: url("../img/галерея/backG.jpg");
 }
 .gallery_container {
-  padding-top: 84px;
-  padding-bottom: 80px;
+  padding-top: 86px;
+  padding-bottom: 79px;
   margin-bottom: 84px;
 }
 .gallery_content {
@@ -688,11 +693,12 @@ h1 {
   color: var(--white-color);
   width: 30%;
   height: 118px;
+  letter-spacing: 0.4px;
 }
 
 .gallery_descr-link {
   color: var(--primary-color);
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 .gallery_descr-link:hover {
   color: var(--paleprimary-color);
@@ -708,7 +714,6 @@ h1 {
   background: none;
 }
 
-
 .gallery_selector {
   width: 100%;
   box-sizing: border-box;
@@ -717,7 +722,6 @@ h1 {
 .custom-select1 {
   position: absolute;
   width: 100%;
-
 }
 .custom-select2 {
   display: none;
@@ -736,6 +740,14 @@ h1 {
   position: absolute;
   z-index: 4;
   transform: translateY(-6px);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 147%;
+}
+.choices__input {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 147%;
 }
 .choices:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -768,6 +780,9 @@ h1 {
 
 .choices__item--choice.choices__placeholder {
   display: none;
+}
+.choices[data-type*="select-one"]:after {
+  right: 14px;
 }
 
 .choices[data-type*="select-one"]::after {
@@ -814,48 +829,56 @@ h1 {
   background-size: cover;
   background-position: center center;
 }
-.custom-swiper-slide {
-   position: relative;
+.custom-swiper-slide-gallery {
+  position: relative;
 }
 
-.custom-swiper-slide::after {
+.custom-swiper-slide-gallery::after {
   opacity: 0;
   content: "";
   position: absolute;
   top: 25px;
-  left:25px;
+  left: 25px;
   width: calc(100% - 50px);
-  height:  calc(100% - 50px);
+  height: calc(100% - 50px);
   background-color: rgba(0, 0, 0, 0.5);
-  background-image:url("../img/галерея/loop+.png");
+  background-image: url("../img/галерея/loop+.png");
   background-repeat: no-repeat;
   background-position: center center;
-  transition: opacity .3s linear;
+  transition: opacity 0.3s linear;
 }
-.custom-swiper-slide:hover::after{
+.custom-swiper-slide {
+  display: block;
+}
+.custom-swiper-slide-gallery:focus {
+  border: 3px solid var(--darkprimary-color);
+  outline: none;
+}
+
+.custom-swiper-slide-gallery:hover::after {
   opacity: 1;
-  }
-  .custom-swiper-slide::before {
-    opacity: 0; 
-    content: "";
-    position: absolute;
-    top: 0;
-    left:0;
-    width: 100%;
-    height:   100%;
-    background-color: rgba(194, 131, 243, .4);
-    border: 1px solid var(--paleprimary-color);
-     background-repeat: no-repeat;
-    background-position: center center;
-    transition: opacity .3s linear;
-  }
-  .custom-swiper-slide:active::after,  .custom-swiper-slide:active::before{
-    opacity: 1;
-    }
+}
+.custom-swiper-slide-gallery::before {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(194, 131, 243, 0.4);
+  border: 1px solid var(--paleprimary-color);
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: opacity 0.3s linear;
+}
+.custom-swiper-slide-gallery:active::after,
+.custom-swiper-slide-gallery:active::before {
+  opacity: 1;
+}
 
 .Art1 {
   background-image: url("../img/галерея/1920/Живопись1.jpg");
-  
 }
 .Art2 {
   background-image: url("../img/галерея/1920/Живопись2.jpg");
@@ -946,12 +969,11 @@ h1 {
 
 .custom-swiper-button-prev,
 .custom-swiper-button-next {
-   width: 30px;
+  width: 30px;
   height: 30px;
   cursor: pointer;
-  
-  }
- .custom-swiper-button-prev-svg {
+}
+.custom-swiper-button-prev-svg {
   transform: rotate(180deg);
 }
 
@@ -961,48 +983,46 @@ h1 {
   width: 30px;
   height: 30px;
   cursor: pointer;
-  
-  }
-  .custom-swiper-button-prev-svg,
-  .custom-swiper-button-next-svg {
-    box-sizing: border-box;
-    border-radius: 100px;
-  }
+}
+.custom-swiper-button-prev-svg,
+.custom-swiper-button-next-svg {
+  box-sizing: border-box;
+  border-radius: 100px;
+}
 
+.custom-swiper-button-prev svg,
+.custom-swiper-button-next svg {
+  fill: var(--blackpale-color);
+  transition: fill 0.3s ease;
+}
 
-  .custom-swiper-button-prev svg, 
-  .custom-swiper-button-next svg {
-  fill:var(--blackpale-color);
-   transition:fill .3s ease;
-  }
+.custom-swiper-button-prev:hover svg,
+.custom-swiper-button-next:hover svg {
+  fill: var(--primary-color);
+}
 
-  .custom-swiper-button-prev:hover svg,
-  .custom-swiper-button-next:hover svg  {
-    fill:var(--primary-color);
-  }
-
-  .custom-swiper-button-prev:focus svg,
-  .custom-swiper-button-next:focus svg  {
-    border: 2px solid var(--black-color);
-  }
-  .custom-swiper-button-prev:active svg,
-  .custom-swiper-button-next:active svg  {
-    fill:var(--darkprimary-color);
-    border: 2px solid var(--black-color); 
-    background: none;
-  }
+.custom-swiper-button-prev:focus svg,
+.custom-swiper-button-next:focus svg {
+  border: 2px solid var(--black-color);
+}
+.custom-swiper-button-prev:active svg,
+.custom-swiper-button-next:active svg {
+  fill: var(--darkprimary-color);
+  border: 2px solid var(--black-color);
+  background: none;
+}
 
 .custom-swiper-button-disabled {
   pointer-events: none;
-  opacity: .5;
-    }
-
+  opacity: 0.5;
+}
 
 .custom-swiper-container {
   overflow: hidden;
   position: relative;
   touch-action: none;
 }
+
 .custom-swiper-wrapper {
   display: flex;
   flex-direction: column;
@@ -1012,8 +1032,6 @@ h1 {
   height: 100%;
   transition: transform 0.2s linear;
 }
-
-
 
 /*catalog*/
 .catalog_container {
@@ -1039,40 +1057,42 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  animation: remove-animatoin .3s linear 0s 1 forwards;
+  animation: remove-animatoin 0.3s linear 0s 1 forwards;
 }
-.catalog_tabs_descr_container{
-position: relative;
+.catalog_tabs_descr_container {
+  position: relative;
 }
-.catalog_tabs_content_is_visible{
-display: flex;
-animation: add-animatoin .3s linear 0s 1 forwards;
-}
-
-@keyframes add-animatoin{
-0% {opacity: 0;
-}
-100% {opacity: 1;
+.catalog_tabs_content_is_visible {
+  display: flex;
+  animation: add-animatoin 0.3s linear 0s 1 forwards;
 }
 
+@keyframes add-animatoin {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes remove-animatoin{
-0% {opacity: 1;
-  top:0;
-  left: 0;
+@keyframes remove-animatoin {
+  0% {
+    opacity: 1;
+    top: 0;
+    left: 0;
+  }
+  99.9% {
+    opacity: 0;
+    top: 0;
+    left: 15px;
+  }
+  100% {
+    opacity: 0;
+    left: -10000vw;
+    top: 100px;
+  }
 }
-99.9%{
-  opacity: 0;
-  top:0;
-  left: 15px;
-}
-100% {
-  opacity: 0;
-  left:-10000vw;
-  top: 100px;
-}
-}      
 
 .catalog_btn_step {
   border: 2px solid transparent;
@@ -1081,7 +1101,7 @@ animation: add-animatoin .3s linear 0s 1 forwards;
   cursor: pointer;
   transition: border 0.3s ease, filter 0.3s ease-in-out;
   position: relative;
-} 
+}
 
 .catalog_btn_step:hover {
   filter: drop-shadow(0 0 20px rgba(157, 92, 208, 0.7));
@@ -1093,14 +1113,13 @@ animation: add-animatoin .3s linear 0s 1 forwards;
 .catalog_btn_step:active {
   border-radius: 50px;
   border: 2px solid var(--darkprimary-color);
- }
+}
 
- 
 .catalog_descr {
   width: 68%;
   padding-bottom: 22px;
   margin-bottom: 17px;
- }
+}
 
 .catalog_btn_step__is_active::after {
   content: "";
@@ -1114,7 +1133,7 @@ animation: add-animatoin .3s linear 0s 1 forwards;
   border: 2px solid var(--primary-color);
   border-radius: 50px;
 }
-  .catalog_content {
+.catalog_content {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1124,10 +1143,10 @@ animation: add-animatoin .3s linear 0s 1 forwards;
 }
 
 .catalog_artist-picture {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 .catalog_artist-name {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .catalog_artist-yars {
   color: #999;
@@ -1143,15 +1162,23 @@ animation: add-animatoin .3s linear 0s 1 forwards;
   display: flex;
   align-items: center;
   width: 100%;
-  border-top: 1px solid #cacaca;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   cursor: pointer;
-  transition: color 0.3s ease, border-color 0.3s ease, fill 0.9s ease;
+  transition: color 0.3s ease, border-color 0.3s ease, fill 0.3s ease;
 }
 
 .catalog_item-years {
-  padding: 40px 0 39px 2px;
-  transition: color 0.3s ease, border-top-color 0.3s ease;
   flex-grow: 1;
+  padding: 39px 0 39px 2px;
+  transition: color 0.3s ease, border-top-color 0.3s ease;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.catalog_item-years-focus {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
 .catalog_plus {
@@ -1166,7 +1193,7 @@ animation: add-animatoin .3s linear 0s 1 forwards;
 .plus {
   min-width: 50px;
   fill: #cacaca;
-  transition: fill 0.3s ease;
+  transition: fill 0.3s ease, stroke 0.3s ease;
 }
 .catalog_list_item .catalog_item-years {
   transition: color 0.3s ease;
@@ -1176,38 +1203,98 @@ animation: add-animatoin .3s linear 0s 1 forwards;
 }
 
 .catalog_list_item:hover {
-  border-color: var(--primary-color);
+  border-top-color: var(--primary-color);
 }
+
 .catalog_list_item:hover + .catalog_list-artists + .catalog_list_item {
   border-top-color: var(--primary-color);
-} 
-
-
-.ui-accordion-header-active .catalog_plus {
-  transform: rotate(180deg);}
-
+}
 .catalog_list_item:hover .catalog_plus {
   fill: var(--paleprimary-color);
 }
 .catalog_list_item:hover .contur {
+  stroke: var(--paleprimary-color);
+}
+
+.catalog_list_item:focus {
+  border: transparent;
+  outline: none;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.catalog_list_item:focus .catalog_item-years-focus {
+  background-color: var(--primary-color);
+}
+
+.catalog_list_item:focus .catalog_item-years {
+  color: var(--white-color);
+}
+
+.catalog_list_item:focus .catalog_plus {
+  fill: var(--paleprimary-color);
+}
+
+.catalog_list_item:active .catalog_item-years {
+  color: var(--darkprimary-color);
+}
+.catalog_list_item:active .catalog_plus {
+  fill: var(--paleprimary-color);
+}
+.catalog_list_item:active .contur {
   stroke: var(--darkprimary-color);
 }
+.catalog_list_item:active {
+  border-top-color: var(--darkprimary-color);
+}
+
+.catalog_list_item:active + .catalog_list-artists + .catalog_list_item {
+  border-top-color: var(--darkprimary-color);
+}
+.catalog_list_item:active .catalog_item-years-focus {
+  background-color: transparent;
+}
+.catalog_list_item:active .catalog_plus {
+  transform: rotate(180deg);
+}
+.ui-accordion-header-active {
+  border-color: var(--darkprimary-color);
+}
+.ui-accordion-header-active h3 {
+  color: var(--darkprimary-color);
+}
+.ui-accordion-header-active .catalog_plus {
+  transform: rotate(180deg);
+}
+
+.ui-accordion-header-active .catalog_plus {
+  fill: var(--paleprimary-color);
+}
+.ui-accordion-header-active .contur {
+  stroke: var(--primary-color);
+}
+
+.ui-accordion-header-active .catalog_item-years-focus {
+  background-color: transparent;
+}
+
 p {
   margin-bottom: 0;
 }
+.catalog_list-artists li {
+  display: inline;
+}
+
 .catalog_list-artists {
-  border-top: 1px solid var(--primary-color);
-  padding-top: 25px;
-  width: 100%;
+  padding-top: 24px;
+  width: calc(86% + 2px);
   height: 338px;
-  padding-right: 100px;
 }
 .catalog_list-artists-size {
-  column-width: 185px;
+  column-width: 197px;
   column-gap: 7%;
   column-fill: auto;
   overflow: auto;
-  
 }
 
 .artist-name-link {
@@ -1218,8 +1305,9 @@ p {
   background-size: 0% 1px;
   transition: background-size 0.3s ease;
 }
-.catalog_list-artists li{
-  display: inline;
+
+.artist-name-link-isactive {
+  color: var(--primary-color);
 }
 
 .artist-name-link:hover {
@@ -1228,12 +1316,15 @@ p {
 }
 
 .artist-name-link:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid var(-);
   color: var(--white-color);
   background-color: var(--primary-color);
-  outline: none;
 }
 .artist-name-link:active {
-  color: var(--primary-color);
+  color: var(--darkprimary-color);
   background-size: 0% 1px;
   background: none;
 }
@@ -1250,11 +1341,9 @@ p {
 }
 .catalog_szablon-block2 {
   display: block;
-  width: 251px;
   height: 163px;
   background: #b7b7b7;
-  margin-left: 12px;
-  margin-top: 12px;
+  margin: 12px;
 }
 .catalog_szablon-title {
   display: block;
@@ -1277,10 +1366,10 @@ p {
   outline: none;
 }
 /*events*/
-.events_container {   
+.events_container {
   max-width: 1703px;
   padding-left: 50px;
-  margin: 0 auto;
+  margin: 0 auto 78px;
   position: relative;
 }
 .events_title {
@@ -1309,9 +1398,8 @@ p {
   flex-direction: column;
   border: 1px solid #cacaca;
   overflow: hidden;
-  
-  }
-.events_item:nth-last-child(-n+2) {
+}
+.events_item:nth-last-child(-n + 2) {
   display: none;
 }
 .events_inner {
@@ -1360,8 +1448,9 @@ p {
   line-height: 32px;
   margin-bottom: auto;
 }
- .events_item-link {
-   transition: color .3s ease,  border-bottom .3s ease, background-color .3s ease;
+.events_item-link {
+  transition: color 0.3s ease, border-bottom 0.3s ease,
+    background-color 0.3s ease;
 }
 .link {
   color: var(--primary-color);
@@ -1375,7 +1464,7 @@ p {
   inset: all;
   color: var(--white-color);
   border-bottom: 1px solid var(--white-color);
-  background-color:var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .link:active {
@@ -1397,27 +1486,544 @@ p {
 
 .events_container_cards input {
   display: none;
-} 
+}
 
- .events_container_cards input:checked + .events-list + label {
-    display: none;
-}  
+.events_container_cards input:checked + .events-list + label {
+  display: none;
+}
 .events_container_cards input:checked + .events-list .events_item {
   display: flex;
 }
-
 .swiper-container {
   display: none;
 }
 
-/*pablications*/
+/*books*/
+.books {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  background-position: center center;
+  background-image: url("../img/Издания/backB.jpg");
+}
+.books_container {
+  padding-top: 84px;
+  padding-bottom: 26px;
+  margin-bottom: 84px;
+}
+.books_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+}
+.books_content-left {
+  flex: 0 0 17%;
+  position: relative;
+}
+.books_custom-spoiler-title {
+  display: none;
+}
+.title-label {
+  display: none;
+}
+.books_custom-checkbox {
+  margin-bottom: 32px;
+}
+.books_title {
+  color: var(--white-color);
+  margin-bottom: 27px;
+}
+.books_custom-checkbox-title {
+  color: var(--white-color);
+}
+.books_category-item {
+  position: relative;
+}
+
+.books_category-descr {
+  position: relative;
+  cursor: pointer;
+  padding-left: 24px;
+  color: var(--white-color);
+}
+
+.checkbox {
+  all: unset;
+}
+
+.checkbox + label .checkbox-point {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--white-color);
+  transition: opacity 0.2s ease-in-out, border-color 0.3s ease;
+  display: block;
+}
+
+.checkbox + label .checkbox-point::before {
+  content: "\2022";
+  position: absolute;
+  top: -11px;
+  left: 3px;
+  opacity: 0;
+  font-size: 12px;
+  transition: opacity 0.2s ease-in-out;
+  color: var(--lightprimary-color);
+}
+.checkbox:checked + label .checkbox-point::before {
+  opacity: 1;
+}
+.checkbox:checked + label .checkbox-point {
+  border: 1px solid var(--lightprimary-color);
+}
+
+.item-label {
+  transition: color 0.3s ease;
+}
+
+.item-label:hover,
+.item-label:focus,
+.item-label:active,
+.checkbox:checked + .item-label {
+  color: var(--lightprimary-color);
+  background: transparent;
+}
+
+.item-label:hover .checkbox-point,
+.item-label:focus .checkbox-point {
+  border-color: var(--lightprimary-color);
+}
+
+.item-label:focus {
+  outline: none;
+}
+
+.books_cost-title {
+  color: var(--white-color);
+  margin-bottom: 15px;
+}
+.books_cost_form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  flex-direction: row;
+  text-align: center;
+  width: 278px;
+}
+.books_cost-descr {
+  color: var(--white-color);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.books_cost-sum {
+  width: 73px;
+  height: 40px;
+  background: rgba(157, 92, 208, 0.5);
+  color: var(--white-color);
+  border: rgba(157, 92, 208, 0.5);
+}
+.books_cost-sum::placeholder {
+  color: var(--white-color);
+  padding-left: 5px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.books_cost-sum:hover {
+  background: var(--primary-color);
+}
+.books_cost-sum:focus {
+  background: var(--primary-color);
+  border: 1px solid var(--white-color);
+  outline: none;
+  box-shadow: none;
+}
+.books_cost-sum:active {
+  background: var(--darkprimary-color);
+  outline: none;
+  box-shadow: none;
+}
+/* slider */
+.books_content-slider {
+  flex: 0 0 calc(72% - 2px);
+  height: calc(34vw + 1px);
+  padding-top: 30px;
+  position: relative;
+}
+
+.books1 {
+  width: 100%;
+  height: calc(100% - 60px);
+}
+.book_custom-swiper-slide {
+  position: relative;
+}
+
+.book_cover {
+  height: 390px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  background-position: center center;
+}
+.book1 {
+  background-image: url("../img/Издания/book1.jpg");
+}
+.book2 {
+  background-image: url("../img/Издания/book2.jpg");
+}
+.book3 {
+  background-image: url("../img/Издания/book3.jpg");
+}
+.book4 {
+  background-image: url("../img/Издания/book4.jpg");
+}
+.book5 {
+  background-image: url("../img/Издания/book5.jpg");
+}
+.book6 {
+  background-image: url("../img/Издания/book6.jpg");
+}
+.book7 {
+  background-image: url("../img/Издания/book7.jpg");
+}
+.book_cover_inner {
+  padding-top: 413px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book_cover_descr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white-color);
+}
+.book_cover-name {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+.book_cover-title {
+  font-weight: 700;
+  overflow: hidden;
+  height: 22px;
+}
+
+.book_cover_descr-cost {
+  font-style: italic;
+  align-self: start;
+}
+.books-btn {
+  padding: 8px 20px;
+  width: 120px;
+  height: 40px;
+  color: var(--white-color);
+  background: transparent;
+  font-weight: 700;
+  font-size: 16px;
+  position: relative;
+}
+
+.books-btn:hover {
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+.books-btn::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: calc(100% + 14px);
+  height: calc(100% + 14px);
+  transition: border-width 0.3s linear;
+  border: none;
+}
+
+.books-btn:focus::after {
+  border-radius: inherit;
+  border: 2px solid var(--lightprimary-color);
+}
+
+.books-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+.books-btn:active {
+  background-color: var(--darkprimary-color);
+  border: 2px solid var(--lightprimary-color);
+  outline: none;
+  box-shadow: none;
+}
+
+.books-btn:active::after {
+  border: none;
+}
+
 /*projects*/
+.projects_container {
+  margin-bottom: 69px;
+}
+.projects_title {
+  margin-bottom: 21px;
+}
+.projects_descr {
+  width: calc(68% - 5px);
+  margin-bottom: 22px;
+}
+
+.projects_tooltip {
+  position: relative;
+  display: inline-block;
+  transition: fill 0.3s linear;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background-position: center center;
+}
+
+.projects_tooltip svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tooltiptext {
+  position: absolute;
+  width: 264px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  left: calc(-132px + 50%);
+  top: 0;
+  transform: translateY(calc(-100% - 11px));
+  transition: opacity 0.3s linear;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 8px 11px 10px 8px;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+}
+.tooltiptext::after {
+  content: " ";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: var(--primary-color);
+  transform: scaleX(0.7) rotate(45deg);
+  bottom: -7px;
+  left: calc(50% - 6.9px);
+}
+.tooltiptext-svg {
+  position: absolute;
+  bottom: -30px;
+  left: calc(50% - 6.9px);
+  width: 16px;
+  width: 16px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.projects_tooltip-svg-circle {
+  stroke-width: 1px;
+  stroke: var(--primary-color);
+  fill: none;
+  transition: fill 0.3s linear;
+}
+.projects_tooltip-svg-i {
+  fill: var(--black-color);
+  transition: fill 0.3s linear;
+}
+.projects_tooltip-svg:hover .projects_tooltip-svg-circle,
+.projects_tooltip:focus .projects_tooltip-svg-circle {
+  fill: var(--paleprimary-color);
+}
+.projects_tooltip:hover .tooltiptext,
+.projects_tooltip:focus .tooltiptext {
+  opacity: 1;
+  visibility: visible;
+}
+.projects_tooltip:focus {
+  outline: none;
+  box-shadow: none;
+}
+.projects_tooltip:focus .projects_tooltip-svg-circle {
+  fill: var(--paleprimary-color);
+}
+
+.projects_tooltip-svg:active .projects_tooltip-svg-i {
+  fill: var(--white-color);
+}
+.projects_tooltip-svg:active .projects_tooltip-svg-circle {
+  fill: var(--primary-color);
+}
+
+.projects-name-link {
+  color: var(--primary-color);
+}
+.projects_slider-title {
+  margin-bottom: 23px;
+}
+.projects-nav-prev {
+  margin-right: 45px;
+  margin-bottom: 10px;
+}
+.projects-nav-next {
+  margin-left: 45px;
+  margin-bottom: 10px;
+}
+.projects_content-slider {
+  display: flex;
+  align-items: center;
+}
+
+.projects1 {
+  width: 100%;
+  height: 160px;
+  padding-bottom: 10px;
+}
+
+.projects-nav svg {
+  fill: #ececec;
+  transition: fill 0.3s ease;
+}
+
+.projects-nav:hover svg {
+  fill: var(--paleprimary-color);
+}
+
+.projects-nav:focus svg {
+  border: 2px solid var(--primary-color);
+}
+.projects-nav:active svg {
+  fill: var(--paleprimary-color);
+  border: 2px solid var(--primary-color);
+  background: none;
+}
+
+.projects-nav.custom-swiper-button-disabled {
+  pointer-events: none;
+  opacity: 0.3;
+  fill: var(--blackpale-color);
+}
+.projects-item {
+  border: 1px solid #cacaca;
+  transition: filter 0.3s ease, border-color 0.3s ease, opasity 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.projects-img {
+  display: block;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  background-position: center center;
+}
+
+.projects-item::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 450px;
+  opacity: 0;
+  border: 2px solid var(--primary-color);
+  z-index: 5;
+}
+
+.projects-item:focus::after {
+  outline: none;
+  box-shadow: none;
+  opacity: 1;
+}
+.projects-item:focus {
+  filter: drop-shadow(-10px 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.partner1 {
+  background-image: url("../img/Проекты/partner1.png");
+  filter: grayscale(1);
+  transition: 0.5s ease-in-out;
+}
+.partner2 {
+  background-image: url("../img/Проекты/partner2.png");
+  filter: grayscale(1);
+  transition: 0.5s ease-in-out;
+}
+.partner3 {
+  background-image: url("../img/Проекты/partner3.png");
+  filter: grayscale(1);
+  transition: 0.5s ease-in-out;
+}
+.partner4 {
+  background-image: url("../img/Проекты/partner4.png");
+  filter: grayscale(1);
+}
+.partner5 {
+  background-image: url("../img/Проекты/partner5.png");
+  filter: grayscale(1);
+}
+.partner6 {
+  background-image: url("../img/Проекты/partner6.png");
+  filter: grayscale(1);
+}
+.partner7 {
+  background-image: url("../img/Проекты/partner7.png");
+  filter: grayscale(1);
+}
+.partner8 {
+  background-image: url("../img/Проекты/partner8.png");
+  filter: grayscale(1);
+}
+.partner9 {
+  background-image: url("../img/Проекты/partner9.png");
+  filter: grayscale(1);
+}
+.projects-item:hover .projects-img.partner1,
+.projects-item:hover .projects-img.partner2,
+.projects-item:hover .projects-img.partner3,
+.projects-item:hover .projects-img.partner4,
+.projects-item:hover .projects-img.partner5,
+.projects-item:hover .projects-img.partner6,
+.projects-item:hover .projects-img.partner7,
+.projects-item:hover .projects-img.partner8,
+.projects-item:hover .projects-img.partner9 {
+  filter: grayscale(0);
+  transition: 0.5s ease-in-out;
+}
+.projects-item:active::after {
+  outline: none;
+  box-shadow: none;
+  opacity: 1;
+}
+.projects-item:active .projects-img.partner1,
+.projects-item:active .projects-img.partner2,
+.projects-item:active .projects-img.partner3,
+.projects-item:active .projects-img.partner4,
+.projects-item:active .projects-img.partner5,
+.projects-item:active .projects-img.partner6,
+.projects-item:active .projects-img.partner7,
+.projects-item:active .projects-img.partner8,
+.projects-item:active .projects-img.partner9 {
+  filter: grayscale(0);
+  transition: 0.5s ease-in-out;
+}
+
 /*contacts*/
 /*footer*/
 
 @media (max-width: 1155px) {
   /* изменения header*/
-  html{
+  html {
     scroll-padding-top: 100px;
   }
   .header-logo {
@@ -1576,7 +2182,7 @@ p {
     margin-bottom: 84px;
   }
   .hero_banner_content {
-    padding-top: 209px;
+    padding-top: 210px;
     padding-bottom: 114px;
     max-width: 100%;
   }
@@ -1586,7 +2192,7 @@ p {
 
   .hero_banner_theme {
     max-width: 100%;
-    margin-bottom: 135px;
+    margin-bottom: 134px;
   }
 
   .hero_descr {
@@ -1607,38 +2213,45 @@ p {
 
   /* изменения gallery*/
   .gallery_container {
-    padding-bottom: 78px;
-    margin-bottom: 83px;
+    padding-bottom: 80px;
+    margin-bottom: 84px;
   }
   .gallery_content-left {
     flex: 0 0 calc(36% - 52px);
   }
-
+  .choices[data-type*="select-one"]:after {
+    right: 16px;
+  }
   .gallery_filter-subtitle {
     margin-bottom: 10px;
   }
   .gallery_title {
-    margin-bottom: 22px;
+    margin-bottom: 20px;
   }
   .gallery_content-authorization {
-    transform: translateY(-152px);
+    transform: translateY(-150px);
   }
   .gallery_descr {
-    width: 27%;
+    width: 28%;
     height: 150px;
   }
   .gallery_content-slider {
-    flex: 0 0 calc(65% - 5px);
-    height: calc(63vw + 34px);
+    flex: 0 0 calc(65% - 7px);
+    height: calc(63vw + 29px);
     position: relative;
-    padding-top: 25px;
+    padding-top: 22px;
   }
   .custom-controller {
     margin-bottom: 26px;
   }
 
   /* изменения catalog*/
-
+  .catalog_container {
+    margin-bottom: 78px;
+  }
+  .catalog_content {
+    padding-top: 1px;
+  }
   .catalog_descr {
     width: 100%;
   }
@@ -1648,19 +2261,49 @@ p {
   .catalog_artist {
     flex: 0 0 calc(53% - 53px);
   }
+.catalog_artist-picture {
+    margin-bottom: 32px;
+}
+
+ .catalog_list {
+    flex: 0 0 calc(48% - 6px);
+  }
+  .catalog_item-years {
+    margin-bottom: 7px;
+  }
   .catalog_list-artists {
-   height: 434px;
-   padding-right: 0;
+    height: 437px;
+    padding-right: 0;
+    width: 100%;
   }
-  .catalog_list {
-    flex: 0 0 calc(48% - 5px);
+
+  .catalog_list-artists-width {
+    width: 108%;
   }
+  .catalog_list-artists-size {
+    column-width: 196px;
+    column-gap: 10%;
+  }
+
+  .catalog_szablon-text {
+    width: 100%;
+  }
+
   /* изменения events*/
+ .events_container {
+   padding-left: 50px;
+    margin: 0 auto 80px;
+  
+ }
+ 
+  .events_title {
+    margin-bottom: 22px;
+  }
 
   .events_inner {
     padding-top: 74%;
     padding-left: 30px;
-    margin-bottom: 56px;
+    margin-bottom: 50px;
   }
 
   .events_item {
@@ -1677,7 +2320,62 @@ p {
   .events_item-text {
     width: 90%;
   }
- 
+
+  .events_btn {
+    height: 59px;
+  }
+
+  /* изменения books*/
+  .books_container {
+    padding-bottom: 76px;
+  }
+  .books1 {
+    height: 433px;
+  }
+
+  .books_content-slider {
+    flex: 0 0 calc(68% + 1px);
+  }
+  .custom-controller {
+    margin-bottom: 30px;
+  }
+  .book_custom-swiper-slide {
+    width: 290px;
+  }
+
+  .book_cover {
+    height: 320px;
+  }
+  .book_cover_inner {
+    padding-top: 333px;
+  }
+  .book_cover-title {
+    height: 22px;
+  }
+
+  .book_cover-name {
+    margin-bottom: 13px;
+  }
+  /* изменения projects*/
+  .projects_title {
+    margin-bottom: 20px;
+  }
+  .projects_descr {
+    width: 100%;
+  }
+
+  .projects1 {
+    height: 138px;
+  }
+  .projects-nav-prev {
+    margin-right: 23px;
+  }
+  .projects-nav-next {
+    margin-left: 23px;
+  }
+  .projects-item::after {
+    width: 386px;
+  }
 }
 
 @media (max-width: 825px) {
@@ -1689,8 +2387,17 @@ p {
     width: 100%;
     padding-left: 50px;
     padding-right: 50px;
+    padding-top: 6px;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .search-input-label input {
+    width: 75vw;
+    padding-top: 5px;
+  }
+  .search-input::placeholder {
+    color: var(--black-color);
   }
 
   /* изменения hero*/
@@ -1704,12 +2411,12 @@ p {
   /* изменения gallery*/
 
   .gallery_container {
-    padding-bottom: 108px;
+    padding-bottom: 112px;
   }
 
   .gallery_content-authorization {
     position: relative;
-    transform: translateY(0);
+    transform: translateY(2px);
   }
   .gallery_descr {
     color: var(--white-color);
@@ -1743,10 +2450,11 @@ p {
   }
   /* изменения catalog*/
   .catalog_container {
-    margin-bottom: 72px;
+    margin-bottom: 75px;
   }
   .catalog_content {
     flex-direction: column-reverse;
+    padding-top: 0;
   }
   .catalog_top-upper {
     display: flex;
@@ -1774,32 +2482,40 @@ p {
     height: 339px;
   }
 
-  
   .catalog_list {
     width: 100%;
   }
   .catalog_artist {
-    margin-top: 45px;
+    margin-top: 48px;
   }
   .catalog_artist-name {
-    margin-bottom: 12px;
+    margin-bottom: 9px;
+  }
+  .catalog_list-artists-size {
+    column-width: 197px;
+    column-gap: 7%;
+  }
+  .catalog_list-artists-width {
+    width: 103%;
   }
   /* изменения events*/
-  .events_item:nth-last-child(-n+3) {
+  .events_container {
+    margin-bottom: 81px;
+  }
+  .events_item:nth-last-child(-n + 3) {
     display: none;
   }
   .events_title {
     margin-bottom: 20px;
   }
   .events_item-heading {
-    margin-bottom: 2px;
+    margin-bottom: 0;
     padding-right: 20px;
   }
 
   .events_item {
     flex: 0 0 44%;
     margin-right: calc(5% - 1px);
-    /* outline: 1px solid fuchsia; */
   }
   .events_inner {
     padding-top: 69%;
@@ -1809,7 +2525,65 @@ p {
     margin-bottom: 4px;
     padding-right: 20px;
   }
+  /* изменения books*/
 
+  .books_container {
+    padding-top: 87px;
+    padding-bottom: 80px;
+  }
+  .books_cost-title {
+    margin-bottom: 10px;
+  }
+  .books_content {
+    flex-direction: column;
+  }
+
+  .books_category-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    height: 160px;
+     }
+
+  .books_category-item {
+    max-width: 185px;
+    min-width: 154px;
+    margin-right: 74px;
+  }
+
+  .books_content-slider {
+    flex: 0 0 100%;
+    padding-top: 50px;
+  }
+
+  .books1 {
+    width: calc(100% - 20px);
+  }
+
+  .books_custom-swiper-container {
+    margin-left: 27px;
+  }
+
+  /* изменения projects*/
+  .projects_descr {
+    padding-right: 9px;
+    margin-bottom: 28px;
+  }
+  .projects_slider-title {
+    margin-bottom: 30px;
+  }
+  .projects1 {
+    height: 116px;
+  }
+  .projects-nav-prev {
+    margin-right: 27px;
+  }
+  .projects-nav-next {
+    margin-left: 27px;
+  }
+  .projects-item::after {
+    width: 264px;
 }
 
 @media (max-width: 630px) {
@@ -1833,7 +2607,7 @@ p {
     height: 44px;
     width: 44px;
     top: -6px;
-    left:-6px;
+    left: -6px;
   }
   .catalog_title {
     margin-bottom: 13px;
@@ -1845,7 +2619,7 @@ p {
   }
 
   /* изменения events*/
-  .events_item:nth-last-child(-n+4) {
+  .events_item:nth-last-child(-n + 4) {
     display: none;
   }
   .events_item {
@@ -1854,8 +2628,7 @@ p {
 }
 
 @media (max-width: 500px) {
-  
-  html{
+  html {
     scroll-padding-top: 45px;
   }
   .container {
@@ -1917,21 +2690,28 @@ p {
   }
 
   .close-menu-search-btn {
-    transform: translate(30px, -30px);
+    transform: translate(33px, -30px);
   }
   .close-menu-btn {
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
   }
   .btn-close {
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
   }
-
-  .menu {
-    max-height: 355px;
+  .search-input-label input {
+    width: 180px;
+    padding-top: 0;
   }
-
+  .btn_find {
+    width: 18px;
+    height: 18px;
+    margin-left: 5px;
+  }
+  .gallery_descr {
+    letter-spacing: normal;
+  }
   /* изменения hero*/
   .hero {
     margin-bottom: 0;
@@ -1991,7 +2771,7 @@ p {
   /*изменения gallery*/
   .gallery_container {
     padding-top: 52px;
-    padding-bottom: 39px;
+    padding-bottom: 42px;
     margin-bottom: 52px;
   }
   .gallery_title {
@@ -2133,11 +2913,10 @@ p {
   }
   .catalog_list-artists {
     padding-top: 20px;
-    padding-right: 80px;
-     }
+  }
   .catalog_list-artists-size {
     height: 804px;
-      overflow: auto;
+    overflow: auto;
   }
 
   .artist-name-link {
@@ -2146,7 +2925,7 @@ p {
     line-height: 32px;
   }
   .catalog_artist {
-    margin-top: 48px;
+    margin-top: 45px;
   }
   .catalog_artist-picture {
     margin-bottom: 22px;
@@ -2161,16 +2940,17 @@ p {
   .catalog_szablon-artists {
     display: flex;
     justify-content: space-between;
-    height: 130px;
+    height: 150px;
   }
+
   .catalog_szablon-block1 {
-    width: 90px;
-    height: 130px;
+    width: 130px;
+    height: 90px;
+    margin-right: 4px;
   }
 
   .catalog_szablon-block2 {
-    width: 76px;
-    height: 118px;
+    height: 78px;
     margin: 6px;
   }
 
@@ -2184,18 +2964,23 @@ p {
   .catalog_szablon-text {
     width: 100%;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 22px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
   }
   /*измения events */
+  .events {
+    margin-bottom: 15px;
+  }
   .events_title {
-    margin-bottom: 13px;
+    margin-bottom: 12px;
   }
 
   .events_container {
     padding-left: 15px;
+    margin-bottom: 0;
   }
+
   .swiper-container {
     display: block;
     width: 100%;
@@ -2207,19 +2992,20 @@ p {
   .events_container_cards {
     display: none;
   }
-  .events_item:nth-last-child(-n+2) {
+  .events_item:nth-last-child(-n + 2) {
     display: flex;
-}
+  }
   .events_item {
-    height:683px;
-    margin: 0 15px 0 15px;
+    height: 683px;
+    margin: 0 1px 0 15px;
   }
   .events_inner {
     padding-top: 214px;
     padding-left: 29px;
     margin-bottom: 52px;
+    margin-right: 10px;
   }
-  
+
   .swiper-container-horizontal
     > .swiper-pagination-bullets
     .swiper-pagination-bullet {
@@ -2249,5 +3035,169 @@ p {
     height: 36px;
     left: calc(50% - 18px);
     top: calc(50% - 18px);
+  }
+  /*изменения book */
+  .books_container {
+    padding-top: 52px;
+    margin-bottom: 0;
+  }
+
+  .books_custom-checkbox-title {
+    display: none;
+  }
+
+  #title-spoiler {
+    display: none;
+  }
+  .books_title {
+    margin-bottom: 14px;
+  }
+
+  .title-label {
+    display: block;
+    padding: 5px 5px 3px 0;
+    border-top: 1px solid var(--white-color);
+    border-bottom: 1px solid var(--white-color);
+    color: var(--white-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    position: relative;
+  }
+
+  .books_custom-spoiler-title + label .title-label-span {
+    top: 15px;
+    right: 0;
+    color: var(--white-color);
+    background: url("../img/Издания/spoiler.svg") no-repeat 50% 50% / 10px 10px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    position: absolute;
+    transition: transform 0.5s;
+  }
+  .books_category-list {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .books_category-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #title-spoiler:checked
+    + label
+    + ul
+    li
+    .item-checkbox:not(:checked)
+    + .item-label {
+    height: 0;
+    border-bottom: none;
+  }
+
+  .checkbox:checked + label .spoiler-cross {
+    top: 14px;
+    right: 0;
+    color: var(--white-color);
+    background: url("/img/Издания/spoilercross.svg") no-repeat 50% 50% / 10px
+      10px;
+    width: 10px;
+    height: 10px;
+    content: "";
+    position: absolute;
+    transition: transform 0.5s;
+  }
+
+  .item-checkbox {
+    display: none;
+  }
+  .item-label {
+    display: block;
+    transition: height 0.3s linear;
+    overflow: hidden;
+    padding-left: 24px;
+    position: relative;
+    cursor: pointer;
+    border-bottom: 1px solid var(--white-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 36px;
+    color: var(--white-color);
+  }
+  .checkbox + label .checkbox-point {
+    top: 12px;
+  }
+
+  #title-spoiler:checked + label .title-label-span {
+    transform: scale(1, -1);
+  }
+  .books_custom-checkbox {
+    margin-bottom: 28px;
+  }
+  .checkbox + label .checkbox-point::before {
+    top: -12px;
+  }
+  .books_cost-descr {
+    color: var(--white-color);
+  }
+  .books_custom-controller {
+    display: none;
+  }
+  .books_custom-swiper-container {
+    margin-left: 0;
+  }
+  .book_custom-swiper-slide {
+    width: 130px;
+  }
+  .book_cover {
+    height: 143px;
+  }
+
+  .book_cover_inner {
+    padding-top: 152px;
+  }
+  .book_cover_descr {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .book_cover-name {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3px;
+  }
+  .book_cover-title {
+    font-weight: 700;
+    overflow: hidden;
+    height: 16px;
+  }
+  .book_cover-author {
+    overflow: hidden;
+    height: 16px;
+  }
+
+  .books-btn {
+    padding: 8px 30px;
+    width: 130px;
+  }
+
+  .books_custom-swiper-container {
+    padding-left: 0;
+    padding-right: 0;
+    width: calc(100% + 30px);
+    height: calc((254px + 50px) * 4);
+  }
+  .custom-swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    height: 100%;
+  }
+  .books_content-slider {
+    padding-bottom: 0;
   }
 }
