@@ -166,29 +166,57 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+.nav_item {
+  position: relative;
+}
 
 .nav_link {
+  position: relative;
   color: var(--white-color);
   font-size: 18px;
   line-height: 25px;
   font-weight: 600;
+  cursor: pointer;
   transition: color 0.3s ease, background-color 0.3s ease, fill 0.3s ease;
 }
+
+.nav_link::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  height: calc(100% + 8px);
+  width: calc(100% + 10px);
+  top: -4px;
+  left: -6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-color: var(--darkprimary-color);
+  border-width: 4px 5px 4px 6px;
+  border-style: solid;
+}
+
 .nav_link:hover {
   color: var(--lightprimary-color);
   fill: var(--lightprimary-color);
 }
-
 .nav_link:focus {
-  color: var(--white-color);
-  fill: var(--white-color);
-  background-color: var(--primary-color);
+  background-color: var(--darkprimary-color);
   outline: none;
+  box-shadow: none;
 }
+
+.nav_link:focus::before {
+  opacity: 1;
+}
+
 .nav_link:active {
   color: var(--darkprimary-color);
   fill: var(--darkprimary-color);
   background: none;
+  background-color: none;
+}
+.nav_link:active::before {
+  opacity: 0;
 }
 
 .header-top_container--return {
@@ -242,28 +270,29 @@ button {
 
 .nav_link-direction {
   font-weight: 400;
-  background: none;
+  background: transparent;
 }
 
 .dropdown-toggle {
   padding-right: 20px;
 }
+
 .dropdown-toggle::after {
   display: inline-block;
   position: absolute;
   content: "";
   z-index: 5;
-  border-top: 1px solid;
-  border-right: 1px solid;
+  border-top: 1.5px solid;
+  border-right: 1.5px solid;
   border-bottom: none;
   border-left: none;
-  width: 7px;
-  height: 7px;
-  top: calc(50% - 3px);
+  width: 8px;
+  height: 8px;
+  top: calc(50% - 4px);
   transform: rotate(135deg);
 }
 
-.dropdown-toggle.show:after {
+.dropdown-toggle.show::after {
   top: calc(50% - 1px);
   transform: rotate(-45deg);
 }
@@ -324,7 +353,6 @@ button {
   font-size: 14px;
   line-height: 19px;
   padding-top: 5px;
-  padding-left: 14px;
   z-index: 10;
   position: absolute;
 }
@@ -1020,7 +1048,7 @@ h1 {
 .custom-swiper-container {
   overflow: hidden;
   position: relative;
-  touch-action: none;
+  touch-action: pan-y pinch-zoom;
 }
 
 .custom-swiper-wrapper {
@@ -1659,14 +1687,14 @@ p {
 
 .books1 {
   width: 100%;
-  height: calc(100% - 60px);
+  height: 572px;
 }
 .book_custom-swiper-slide {
   position: relative;
 }
 
 .book_cover {
-  height: 390px;
+  height: 69%;
   background-repeat: no-repeat;
   background-size: cover;
   box-sizing: border-box;
@@ -1694,21 +1722,20 @@ p {
   background-image: url("../img/Издания/book7.jpg");
 }
 .book_cover_inner {
-  padding-top: 413px;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .book_cover_descr {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   color: var(--white-color);
 }
+
 .book_cover-name {
   display: flex;
   flex-direction: column;
-  margin-bottom: 14px;
+  align-items: flex-start;
 }
 .book_cover-title {
   font-weight: 700;
@@ -1717,10 +1744,13 @@ p {
 }
 
 .book_cover_descr-cost {
+  flex: 0 0 73px;
   font-style: italic;
-  align-self: start;
+  align-items: flex-end;
 }
+
 .books-btn {
+  margin-top: 14px;
   padding: 8px 20px;
   width: 120px;
   height: 40px;
@@ -1872,10 +1902,12 @@ p {
   margin-bottom: 23px;
 }
 .projects-nav-prev {
+  flex: 0 0 auto;
   margin-right: 45px;
   margin-bottom: 10px;
 }
 .projects-nav-next {
+  flex: 0 0 auto;
   margin-left: 45px;
   margin-bottom: 10px;
 }
@@ -2261,11 +2293,11 @@ p {
   .catalog_artist {
     flex: 0 0 calc(53% - 53px);
   }
-.catalog_artist-picture {
+  .catalog_artist-picture {
     margin-bottom: 32px;
-}
+  }
 
- .catalog_list {
+  .catalog_list {
     flex: 0 0 calc(48% - 6px);
   }
   .catalog_item-years {
@@ -2290,12 +2322,11 @@ p {
   }
 
   /* изменения events*/
- .events_container {
-   padding-left: 50px;
+  .events_container {
+    padding-left: 50px;
     margin: 0 auto 80px;
-  
- }
- 
+  }
+
   .events_title {
     margin-bottom: 22px;
   }
@@ -2330,7 +2361,7 @@ p {
     padding-bottom: 76px;
   }
   .books1 {
-    height: 433px;
+    height: 493px;
   }
 
   .books_content-slider {
@@ -2342,20 +2373,13 @@ p {
   .book_custom-swiper-slide {
     width: 290px;
   }
-
   .book_cover {
     height: 320px;
   }
   .book_cover_inner {
-    padding-top: 333px;
-  }
-  .book_cover-title {
-    height: 22px;
+    margin-top: 11px;
   }
 
-  .book_cover-name {
-    margin-bottom: 13px;
-  }
   /* изменения projects*/
   .projects_title {
     margin-bottom: 20px;
@@ -2529,7 +2553,7 @@ p {
 
   .books_container {
     padding-top: 87px;
-    padding-bottom: 80px;
+    padding-bottom: 20px;
   }
   .books_cost-title {
     margin-bottom: 10px;
@@ -2544,7 +2568,7 @@ p {
     justify-content: flex-start;
     flex-wrap: wrap;
     height: 160px;
-     }
+  }
 
   .books_category-item {
     max-width: 185px;
@@ -2558,7 +2582,7 @@ p {
   }
 
   .books1 {
-    width: calc(100% - 20px);
+    width: calc(100% - 55px);
   }
 
   .books_custom-swiper-container {
@@ -2584,8 +2608,8 @@ p {
   }
   .projects-item::after {
     width: 264px;
+  }
 }
-
 @media (max-width: 630px) {
   h1 {
     font-size: 57px;
@@ -2687,6 +2711,10 @@ p {
     border: 1px solid var(--primary-color);
     padding: 10px 20px;
     border-radius: 100px;
+  }
+  .menu-search {
+    right: 100%;
+    
   }
 
   .close-menu-search-btn {
@@ -2889,6 +2917,7 @@ p {
     color: var(--white-color);
     font-size: 16px;
     line-height: 32px;
+    letter-spacing: 0.3px;
     height: auto;
     max-width: 270px;
   }
@@ -2936,6 +2965,7 @@ p {
   .catalog_artist-text {
     font-size: 16px;
     line-height: 32px;
+    margin-right: 2px;
   }
   .catalog_szablon-artists {
     display: flex;
@@ -2997,7 +3027,7 @@ p {
   }
   .events_item {
     height: 683px;
-    margin: 0 1px 0 15px;
+    margin: 0 15px 0 15px;
   }
   .events_inner {
     padding-top: 214px;
@@ -3015,16 +3045,16 @@ p {
     bottom: 30px;
   }
   .swiper-pagination-bullet:hover {
-    opacity: 0.6;
+    background: var(--blackpale-color);
   }
-  .swiper-pagination-bullet-active:hover {
-    opacity: 1;
+
+  .swiper-pagination-bullet-active {
+    background: var(--blackpale-color);
   }
   .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
     background: var(--whitepale-color);
-    opacity: 0.4;
     position: relative;
   }
 
@@ -3039,7 +3069,8 @@ p {
   /*изменения book */
   .books_container {
     padding-top: 52px;
-    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 52px;
   }
 
   .books_custom-checkbox-title {
@@ -3144,30 +3175,35 @@ p {
   .books_custom-controller {
     display: none;
   }
-  .books_custom-swiper-container {
-    margin-left: 0;
-  }
+
   .book_custom-swiper-slide {
-    width: 130px;
+    max-width: 130px;
+    margin-right: 15px;
   }
   .book_cover {
     height: 143px;
   }
 
-  .book_cover_inner {
-    padding-top: 152px;
-  }
   .book_cover_descr {
     flex-direction: column;
     align-items: flex-start;
     font-size: 12px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
+
   .book_cover-name {
     display: flex;
     flex-direction: column;
     margin-bottom: 3px;
   }
+  .book_cover_descr-cost {
+    flex: auto;
+  }
+
+  .book_cover_inner {
+    padding-top: 5px;
+  }
+
   .book_cover-title {
     font-weight: 700;
     overflow: hidden;
@@ -3177,17 +3213,18 @@ p {
     overflow: hidden;
     height: 16px;
   }
-
   .books-btn {
-    padding: 8px 30px;
+    padding: 15px 35px;
     width: 130px;
+    font-size: 12px;
   }
 
   .books_custom-swiper-container {
     padding-left: 0;
     padding-right: 0;
-    width: calc(100% + 30px);
+    width: 100%;
     height: calc((254px + 50px) * 4);
+    margin-left: 0;
   }
   .custom-swiper-wrapper {
     display: flex;
@@ -3199,5 +3236,33 @@ p {
   }
   .books_content-slider {
     padding-bottom: 0;
+  }
+
+  /*изменения projects*/
+  .projects_title {
+    margin-bottom: 15px;
+  }
+  .projects_descr {
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 15px;
+  }
+  .projects_slider-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .projects1 {
+    height: 75px;
+  }
+  .projects-item::after {
+    width: 196px;
+  }
+
+  .projects-nav-prev {
+    margin-right: 17px;
+  }
+
+  .projects-nav-next {
+    margin-left: 17px;
   }
 }

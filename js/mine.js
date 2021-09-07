@@ -186,7 +186,7 @@ let [swiper, bookSwiper, projectSwiper] = (() => {
       prevEl: ".custom-swiper-button-prev.books-nav",
     },
     breakpoints: {
-      1502: {
+      1250: {
         slidesPerView: 3,
         slidesPerColumn: 1,
         slidesPerGroup: 3,
@@ -202,11 +202,12 @@ let [swiper, bookSwiper, projectSwiper] = (() => {
         slidesPerView: 2,
         slidesPerColumn: 1,
         slidesPerGroup: 2,
-        spaceBetween: 1,
+        spaceBetween: 34,
       },
       0: {
         slidesPerView: 2,
-        spaceAround: 15,
+        slidesPerGroup: 2,
+        spaceBetween: 34,
         slidesPerColumn: 4,
       },
     },
@@ -223,7 +224,7 @@ let [swiper, bookSwiper, projectSwiper] = (() => {
       prevEl: ".custom-swiper-button-prev.projects-nav",
     },
     breakpoints: {
-      1502: {
+      1302: {
         slidesPerView: 3,
         slidesPerColumn: 1,
         slidesPerGroup: 3,
@@ -245,6 +246,7 @@ let [swiper, bookSwiper, projectSwiper] = (() => {
         slidesPerView: 1,
         slidesPerColumn: 1,
         slidesPerGroup: 1,
+        spaceBetween: 17,
       },
     },
   });
