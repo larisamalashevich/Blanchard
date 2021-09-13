@@ -101,7 +101,7 @@ CustomSwiper.prototype.onSwap = function (event) {
 const positionExtractor = (event) => event.clientX;
 
 CustomSwiper.prototype.onTouchStart = function (event) {
-  console.log("touch start");
+  // console.log("touch start");
   event.preventDefault();
   this.wrapperElement.setPointerCapture(event.pointerId);
   this.wrapperElement.style.transition = "none";
@@ -114,7 +114,7 @@ CustomSwiper.prototype.onTouchStart = function (event) {
 };
 
 CustomSwiper.prototype.onTouchEnd = function (event, reason) {
-  console.log("touch end");
+  // console.log("touch end");
   if (this.moveAnchor) {
     this.wrapperElement.releasePointerCapture(event.pointerId);
 
@@ -148,7 +148,7 @@ CustomSwiper.prototype.onTouchEnd = function (event, reason) {
 };
 
 CustomSwiper.prototype.onTouchMove = throttle(function (event) {
-  console.log("touch move");
+  // console.log("touch move");
   event.preventDefault();
   if (this.moveAnchor) {
     const currentPostion = positionExtractor(event);
@@ -174,7 +174,7 @@ CustomSwiper.prototype.onWindowResize = function () {
 CustomSwiper.prototype.updateSizes = async function () {
   await new Promise((resolve) => setTimeout(resolve, 0));
 
-  console.log(this.element.classList, this.currentBreakpoint, this.sizes);
+  // console.log(this.element.classList, this.currentBreakpoint, this.sizes);
   const columnsCount = Math.ceil(
     this.slides.length / this.sizes.slidesPerColumn
   );

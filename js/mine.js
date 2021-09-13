@@ -198,7 +198,8 @@ let [swiper, bookSwiper, projectSwiper] = (() => {
         slidesPerGroup: 2,
         spaceBetween: 50,
       },
-      500: {
+      
+      501: {
         slidesPerView: 2,
         slidesPerColumn: 1,
         slidesPerGroup: 2,
@@ -207,7 +208,7 @@ let [swiper, bookSwiper, projectSwiper] = (() => {
       0: {
         slidesPerView: 2,
         slidesPerGroup: 2,
-        spaceBetween: 34,
+        spaceBetween: 0,
         slidesPerColumn: 4,
       },
     },
@@ -296,9 +297,78 @@ function check(event) {
     checkbox.checked = !checkbox.checked;
   }
 }
+
 //Отключение фокусф при клике
 document.querySelectorAll(".catalog_list_item").forEach((accordionHeader) => {
   accordionHeader.addEventListener("click", (event) => {
     event.currentTarget.blur();
   });
 });
+
+//Подключение tooltip
+function throttle(functor, delay) {
+  let lastCall = 0;
+  let args = null;
+  let context = null;
+  let timeout = null;
+
+  return function () {
+      const now = +new Date();
+      if (now >= lastCall + delay) {
+          lastCall = now;
+          functor.apply(this, arguments);
+      } else {
+          lastCall = now;
+          args = arguments;
+          context = this;
+
+          if (!timeout) {
+              timeout = setTimeout(() => {
+                  timeout = null;
+                  functor.apply(context, args);
+              }, delay);
+          }
+      }
+  };
+}
+
+function initCustomTooltips(selector = ".projects_tooltip") {
+
+
+  document.querySelectorAll(selector).forEach((tooltip) => {
+      const popup = tooltip.querySelector('.tooltiptext')
+
+
+      if (popup) {
+          let initTransform =  '' + popup.computedStyleMap().get('transform')
+          initTransform = initTransform == 'none' ? '' : initTransform
+
+          let currentShift = 0;
+
+          function reposition() {
+              const clientWidth = Math.min(document.documentElement.clientWidth, window.innerWidth)
+            
+              const rect = popup.getBoundingClientRect()
+
+              const primary_right = rect.width + rect.x - currentShift
+              const primary_left = rect.x - currentShift
+              if (primary_right <= clientWidth && primary_left >= 0) {
+                  currentShift = 0
+              } else if (primary_left < 0) {
+                  currentShift = -primary_left
+              } else {
+                  currentShift = clientWidth - primary_right
+              }
+              popup.style.transform = '' + initTransform + ` translate3d(${currentShift}px, 0, 0)`
+          }
+
+          window.addEventListener('resize', throttle(reposition, 20))
+          reposition()
+
+      }
+  })
+
+}
+
+initCustomTooltips()
+
